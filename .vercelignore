@@ -1,0 +1,14 @@
+.claude/
+.git/
+.env*
+node_modules/
+src/
+plugins/
+tools/
+package.json
+package-lock.json
+vite.config.js
+postcss.config.js
+tailwind.config.js
+.nvmrc
+.version

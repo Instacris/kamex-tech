@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio - KAMEX Tech</title>
+
+    <meta name="description" content="Explora nuestro portafolio: menús digitales QR, sitios comerciales y sistemas de gestión a medida. Proyectos reales, en línea." />
+    <meta property="og:title" content="Portafolio - KAMEX Tech" />
+    <meta property="og:description" content="Explora nuestro portafolio: menús digitales QR, sitios comerciales y sistemas de gestión a medida." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=5">
+</head>
+
+<body>
+
+<div class="background-animation">
+    <div class="code-particle">HTML</div>
+    <div class="code-particle">CSS</div>
+    <div class="code-particle">JS</div>
+    <div class="code-particle">React</div>
+    <div class="code-particle">Node.js</div>
+</div>
+
+<header class="header">
+    <nav class="nav container">
+        <a href="index.html" class="logo">
+            <span class="logo-text">KAMEX</span>
+            <span class="logo-accent">Tech</span>
+        </a>
+
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+            <li><a href="portfolio.html" class="nav-link active">Portafolio</a></li>
+            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+
+        <div class="mobile-menu-toggle">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</header>
+
+<main>
+<section class="portfolio-page-section">
+<div class="container">
+
+<h1 class="section-title">Nuestro Portafolio</h1>
+<p class="section-subtitle">
+    Proyectos reales que puedes visitar ahora mismo: menús digitales, sitios comerciales y sistemas de gestión a medida.
+</p>
+
+<div class="portfolio-grid-full">
+
+<!-- 1 PIXEL RESTAURANT · ARCADE BAR -->
+<div class="portfolio-item-full">
+    <div class="portfolio-image" style="background-image: url('Imagenes portafolio/ArcadeBar.png');"></div>
+    <div class="portfolio-content-full">
+        <span class="portfolio-badge live">● En línea</span>
+        <h3>Pixel Restaurant · Arcade Bar</h3>
+        <p>
+            Carta virtual con temática pixel art para un bar arcade: categorías, fichas de platos
+            con ingredientes, animaciones y carrito de pedidos.
+        </p>
+        <div class="portfolio-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">Tailwind</span>
+        </div>
+        <a href="https://pixel-restaurant.vercel.app" class="portfolio-link-full" target="_blank" rel="noopener noreferrer">
+            Visitar Sitio →
+        </a>
+    </div>
+</div>
+
+<!-- 2 BODEGA · GESTIÓN DE MERCADERÍA -->
+<div class="portfolio-item-full">
+    <div class="portfolio-image" style="background-image: url('Imagenes portafolio/GestorBodega.png');"></div>
+    <div class="portfolio-content-full">
+        <span class="portfolio-badge live">● En línea</span>
+        <h3>Bodega · Gestión de Mercadería</h3>
+        <p>
+            Sistema para personal administrativo de bodega: control de vencimientos, stock,
+            mermas, compras y cargas masivas desde Excel. Funciona sin instalación.
+        </p>
+        <div class="portfolio-tech">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Excel</span>
+            <span class="tech-tag">LocalStorage</span>
+        </div>
+        <a href="https://bodega-gestion.vercel.app" class="portfolio-link-full" target="_blank" rel="noopener noreferrer">
+            Visitar Sitio →
+        </a>
+    </div>
+</div>
+
+<!-- 3 PLANTEL · GESTIÓN DE PERSONAL (ADMINISTRATIVO) -->
+<div class="portfolio-item-full">
+    <div class="portfolio-image" style="background-image: url('Imagenes portafolio/gestorAdmin.png');"></div>
+    <div class="portfolio-content-full">
+        <span class="portfolio-badge live">● En línea</span>
+        <h3>Plantel · Gestión de Personal</h3>
+        <p>
+            App de RR.HH. para administrar personal: contratos, horarios y nómina.
+            Con base de datos real (Neon Postgres), API serverless y autenticación JWT.
+        </p>
+        <div class="portfolio-tech">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Postgres</span>
+            <span class="tech-tag">API</span>
+            <span class="tech-tag">JWT</span>
+        </div>
+        <a href="https://plantel-gestion-personal.vercel.app" class="portfolio-link-full" target="_blank" rel="noopener noreferrer">
+            Visitar Sitio →
+        </a>
+    </div>
+</div>
+
+<!-- 4 CLÍNICA QUILLAY -->
+<div class="portfolio-item-full">
+    <div class="portfolio-image" style="background-image: url('Imagenes portafolio/hospital.png');"></div>
+    <div class="portfolio-content-full">
+        <span class="portfolio-badge live">● En línea</span>
+        <h3>Clínica Quillay</h3>
+        <p>
+            Landing institucional para una clínica: reserva de horas en 4 pasos con validación
+            de RUT, buscador de especialidades, FAQ y diseño accesible.
+        </p>
+        <div class="portfolio-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JS vanilla</span>
+        </div>
+        <a href="https://clinica-quillay.vercel.app" class="portfolio-link-full" target="_blank" rel="noopener noreferrer">
+            Visitar Sitio →
+        </a>
+    </div>
+</div>
+
+<!-- 5 PLANETARIO AUSTRAL -->
+<div class="portfolio-item-full">
+    <div class="portfolio-image" style="background-image: url('Imagenes portafolio/Planetario.png');"></div>
+    <div class="portfolio-content-full">
+        <span class="portfolio-badge live">● En línea</span>
+        <h3>Planetario Austral</h3>
+        <p>
+            Sitio educativo con buscador de astros, módulos de aprendizaje verificados con
+            NASA/ESA y una zona Kids gamificada con estrellas por descubrir.
+        </p>
+        <div class="portfolio-tech">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Educación</span>
+            <span class="tech-tag">UI/UX</span>
+        </div>
+        <a href="https://planetario-austral.vercel.app" class="portfolio-link-full" target="_blank" rel="noopener noreferrer">
+            Visitar Sitio →
+        </a>
+    </div>
+</div>
+
+<!-- 6 ORIGEN · TIENDA DE CAFÉ -->
+<div class="portfolio-item-full">
+    <div class="portfolio-image" style="background-image: url('Imagenes portafolio/Origen.png');"></div>
+    <div class="portfolio-content-full">
+        <span class="portfolio-badge live">● En línea</span>
+        <h3>ORIGEN · Tienda de Café</h3>
+        <p>
+            Tienda online de café y máquinas con carrito, checkout que descuenta stock
+            y panel de administración completo (productos, pedidos y ajustes).
+        </p>
+        <div class="portfolio-tech">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">E-commerce</span>
+            <span class="tech-tag">Admin</span>
+        </div>
+        <a href="https://origen-cafe-eta.vercel.app" class="portfolio-link-full" target="_blank" rel="noopener noreferrer">
+            Visitar Sitio →
+        </a>
+    </div>
+</div>
+
+<!-- 7 FERRETERÍA EL GALPÓN -->
+<div class="portfolio-item-full">
+    <div class="portfolio-image" style="background-image: url('Imagenes portafolio/Ferreteria.png');"></div>
+    <div class="portfolio-content-full">
+        <span class="portfolio-badge live">● En línea</span>
+        <h3>Ferretería EL GALPÓN</h3>
+        <p>
+            Sitio catálogo para una ferretería y maquinaria: más de 190 productos con
+            filtros por categoría, búsqueda y enfoque en precios mayoristas por volumen.
+        </p>
+        <div class="portfolio-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+        </div>
+        <a href="https://ferreteria-el-galpon.vercel.app" class="portfolio-link-full" target="_blank" rel="noopener noreferrer">
+            Visitar Sitio →
+        </a>
+    </div>
+</div>
+
+<!-- 8 TURNERO -->
+<div class="portfolio-item-full">
+    <div class="portfolio-image" style="background-image: url('Imagenes portafolio/Turnero Paris.jpg');"></div>
+    <div class="portfolio-content-full">
+        <span class="portfolio-badge delivered">Entregado a cliente</span>
+        <h3>Turnero Minimarket</h3>
+        <p>
+            Sistema de turnos para minimarket, con sonidos, atajos y pantalla para clientes.
+            Proyecto enfocado en optimizar la atención y el orden.
+        </p>
+        <div class="portfolio-tech">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+        </div>
+    </div>
+</div>
+
+<!-- CTA FINAL -->
+<div class="portfolio-item-full cta-card">
+    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=2070&auto=format&fit=crop');"></div>
+    <div class="portfolio-content-full">
+        <h3>Sé el próximo cliente</h3>
+        <p>Tu proyecto puede estar aquí. Cuéntanos tu idea y te enviamos una propuesta sin compromiso.</p>
+        <div class="portfolio-tech">
+            <span class="tech-tag">Diseño Web</span>
+            <span class="tech-tag">Menú Digital</span>
+            <span class="tech-tag">Sistemas a Medida</span>
+        </div>
+        <a href="contacto.html" class="portfolio-link-full">Contáctanos →</a>
+    </div>
+</div>
+
+</div>
+
+</div>
+</section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <a href="index.html" class="footer-logo">
+                    <span class="logo-text">KAMEX</span>
+                    <span class="logo-accent">Tech</span>
+                </a>
+                <p class="footer-description">
+                    Transformamos ideas en experiencias web extraordinarias.
+                </p>
+            </div>
+            <div class="footer-section">
+                <span class="footer-title">Enlaces</span>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="portfolio.html">Portafolio</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <span class="footer-title">Contacto</span>
+                <ul class="footer-links">
+                    <li>kamexio.ccb@gmail.com</li>
+                    <li>+56 9 4044 3203</li>
+                    <li>Santiago, Chile</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 KAMEX Tech. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/56940443203?text=Hola%20KAMEX%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-1.2 0-2.4-.3-3.5-.8l-.6-.3-4.9.9 1-4.7-.3-.6C6.6 18 6 16.5 6 15 6 9.5 10.5 5 16 5s10 4.5 10 10-4.5 10-10 10zm5.5-7.5c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2s-.8 1-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script src="script.js?v=4"></script>
+</body>
+</html>
