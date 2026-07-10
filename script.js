@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Retraso escalonado para las tarjetas dentro de cada grilla
-    document.querySelectorAll('.benefits-grid, .plans-grid, .portfolio-grid-home, .portfolio-grid-full').forEach(parent => {
+    document.querySelectorAll('.benefits-grid, .plans-grid, .portfolio-grid-home, .portfolio-grid-full, .portfolio-showcase').forEach(parent => {
         Array.from(parent.children).forEach((child, i) => {
             child.dataset.revealDelay = Math.min(i * 90, 450);
         });
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     if (!reducedMotion) {
-        document.querySelectorAll('.plan-card, .portfolio-item, .benefit-card, .section-title, .contact-form-wrapper, .contact-info-item, .portfolio-item-full').forEach(el => {
+        document.querySelectorAll('.plan-card, .portfolio-item, .benefit-card, .section-title, .contact-form-wrapper, .contact-info-item, .portfolio-item-full, .showcase-card, .quote-builder').forEach(el => {
           el.style.opacity = '0';
           el.style.transform = 'translateY(30px)';
           el.style.transition = 'opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)';
@@ -100,6 +100,23 @@ document.addEventListener('DOMContentLoaded', function() {
         particle.style.animationDuration = `${duration}s`;
         particle.style.animationDelay = `${delay}s`;
     });
+
+    // Arma tu propio plan: la selección se envía por WhatsApp
+    const quoteSend = document.getElementById('quote-send');
+    if (quoteSend) {
+        const quoteOther = document.getElementById('quote-other');
+        const buildQuoteLink = () => {
+            const opts = [...document.querySelectorAll('.quote-chip input:checked')].map(i => i.value);
+            const other = quoteOther ? quoteOther.value.trim() : '';
+            if (other) opts.push(other);
+            const base = 'Hola KAMEX, quiero cotizar una página web';
+            const msg = opts.length ? `${base} con: ${opts.join(', ')}.` : `${base}.`;
+            quoteSend.href = 'https://wa.me/56940443203?text=' + encodeURIComponent(msg);
+        };
+        document.querySelectorAll('.quote-chip input').forEach(i => i.addEventListener('change', buildQuoteLink));
+        if (quoteOther) quoteOther.addEventListener('input', buildQuoteLink);
+        buildQuoteLink();
+    }
 
     // Inclinación 3D sutil de la tarjeta de código del hero (solo mouse)
     const tiltCard = document.querySelector('.floating-card');
