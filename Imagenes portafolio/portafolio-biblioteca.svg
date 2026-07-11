@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fcf9f2"/>
+      <stop offset="1" stop-color="#efe7d6"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8a6c2c"/>
+      <stop offset="0.5" stop-color="#b08c3e"/>
+      <stop offset="1" stop-color="#8a6c2c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#paper)"/>
+
+  <!-- Doble marco dorado -->
+  <rect x="70" y="70" width="1460" height="860" fill="none" stroke="#8a6c2c" stroke-width="2" opacity="0.85"/>
+  <rect x="88" y="88" width="1424" height="824" fill="none" stroke="#b08c3e" stroke-width="1" opacity="0.6"/>
+
+  <!-- Kicker superior -->
+  <text x="800" y="250" text-anchor="middle" font-size="30" letter-spacing="14" fill="#8a6c2c" font-family="'Segoe UI', Arial, sans-serif" font-weight="600">PORTAFOLIO · MMXXVI</text>
+
+  <!-- Filete + ornamento -->
+  <line x1="560" y1="300" x2="740" y2="300" stroke="#8a6c2c" stroke-width="1.5" opacity="0.7"/>
+  <text x="800" y="312" text-anchor="middle" font-size="34" fill="#8a6c2c">&#10086;</text>
+  <line x1="860" y1="300" x2="1040" y2="300" stroke="#8a6c2c" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Nombre -->
+  <text x="800" y="470" text-anchor="middle" font-size="150" font-weight="600" fill="#221f19">Cristóbal</text>
+  <text x="800" y="620" text-anchor="middle" font-size="150" font-weight="600" fill="#221f19">Chacón</text>
+
+  <!-- Subtítulo -->
+  <text x="800" y="710" text-anchor="middle" font-size="44" font-style="italic" fill="#7d3434">Desarrollador web &amp; analista informático</text>
+
+  <!-- Filete inferior + edición -->
+  <line x1="620" y1="800" x2="980" y2="800" stroke="#8a6c2c" stroke-width="1" opacity="0.55"/>
+  <text x="800" y="855" text-anchor="middle" font-size="30" letter-spacing="10" fill="#7a7263" font-family="'Segoe UI', Arial, sans-serif" font-weight="500">EDICIÓN II · «BIBLIOTECA»</text>
+</svg>
