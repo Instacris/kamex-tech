@@ -10,46 +10,46 @@
 @property --primary-color {
   syntax: '<color>';
   inherits: true;
-  initial-value: #00c6ff;
+  initial-value: #dcb75a;
 }
 @property --secondary-color {
   syntax: '<color>';
   inherits: true;
-  initial-value: #0072ff;
+  initial-value: #9c7c2e;
 }
 
 :root {
-  --primary-color: #00c6ff;
-  --secondary-color: #0072ff;
-  --accent-color: #f857a6;
-  --accent-color-2: #ff5858;
-  --bg-gradient: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  --primary-color: #dcb75a;
+  --secondary-color: #9c7c2e;
+  --accent-color: #d4af37;
+  --accent-color-2: #f5efe0;
+  --bg-gradient: linear-gradient(135deg, #181818 0%, #0a0a0a 100%);
   --text-color: #e5e7eb;
   --text-muted-color: #9ca3af;
   --card-bg: rgba(255, 255, 255, 0.05);
   --card-border: rgba(255, 255, 255, 0.1);
-  --header-bg: rgba(17, 24, 39, 0.8);
-  animation: colorPulse 5s ease infinite;
+  --header-bg: rgba(10, 10, 10, 0.85);
+  animation: colorPulse 7s ease infinite;
 }
 
 /* Todo lo que usa --primary-color/--secondary-color (textos, íconos, bordes,
-   botones) respira entre azul y rosa/rojo al mismo ritmo que "Creativo" */
+   botones) respira entre dorado y blanco al mismo ritmo que "Creativo" */
 @keyframes colorPulse {
   0%,
   100% {
-    --primary-color: #00c6ff;
-    --secondary-color: #0072ff;
+    --primary-color: #dcb75a;
+    --secondary-color: #9c7c2e;
   }
   50% {
-    --primary-color: #f857a6;
-    --secondary-color: #ff5858;
+    --primary-color: #ffffff;
+    --secondary-color: #d9d4c5;
   }
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
-  scrollbar-color: #0072ff #0d1220;
+  scrollbar-color: #d4af37 #0d0d0d;
   scrollbar-width: thin;
 }
 
@@ -78,8 +78,8 @@ body::before {
 }
 
 ::selection {
-  background: rgba(0, 198, 255, 0.35);
-  color: #fff;
+  background: rgba(212, 175, 55, 0.55);
+  color: #111;
 }
 
 /* Scrollbar personalizada */
@@ -87,7 +87,7 @@ body::before {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d1220;
+  background: #0d0d0d;
 }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
@@ -103,7 +103,7 @@ h1, h2, h3,
 .hero-title,
 .section-title,
 .plan-name {
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
 }
 
 .container {
@@ -148,36 +148,17 @@ a:hover {
 .background-animation::before {
   top: -180px;
   right: -180px;
-  background: radial-gradient(circle, rgba(0, 114, 255, 0.28), transparent 70%);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.16), transparent 70%);
 }
 .background-animation::after {
   bottom: -200px;
   left: -200px;
-  background: radial-gradient(circle, rgba(248, 87, 166, 0.2), transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%);
 }
 
-.code-particle {
-  position: absolute;
-  top: -50px; /* empiezan arriba */
-  font-family: 'Fira Code', 'Courier New', monospace;
-  font-size: 0.8rem;
-  color: rgba(0, 198, 255, 0.38);
-  text-shadow: 0 0 14px rgba(0, 198, 255, 0.25);
-  opacity: 0.45;
-  animation: fall linear infinite;
-}
-
-/* Animación de caída */
-@keyframes fall {
-  from {
-    transform: translateY(-50px);
-    opacity: 0.45;
-  }
-  to {
-    transform: translateY(110vh);
-    opacity: 0;
-  }
-}
+/* Las palabras de código cayendo quedaron fuera: el fondo se sostiene
+   solo con los orbes de luz de las esquinas. */
+.code-particle { display: none; }
 
 /* Header */
 .header {
@@ -209,8 +190,12 @@ a:hover {
   color: var(--text-color);
 }
 
+.logo-text {
+  color: #ffffff;
+}
+
 .logo-accent {
-  color: var(--primary-color);
+  color: #d4af37;
 }
 
 .nav-menu {
@@ -306,7 +291,7 @@ a:hover {
   content: '';
   position: absolute;
   inset: 38px;
-  border: 1px solid rgba(248, 87, 166, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 50%;
 }
 .deco-ring::after {
@@ -325,7 +310,7 @@ a:hover {
   top: 10%;
   width: 230px;
   height: 230px;
-  background-image: radial-gradient(rgba(0, 198, 255, 0.35) 1.5px, transparent 1.6px);
+  background-image: radial-gradient(rgba(212, 175, 55, 0.35) 1.5px, transparent 1.6px);
   background-size: 22px 22px;
   -webkit-mask-image: radial-gradient(circle at center, black, transparent 75%);
   mask-image: radial-gradient(circle at center, black, transparent 75%);
@@ -365,22 +350,7 @@ a:hover {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, var(--accent-color), var(--accent-color-2), var(--primary-color), var(--accent-color));
-  background-size: 300% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientShift 5s ease infinite;
-}
-
-@keyframes gradientShift {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+  color: var(--accent-color);
 }
 
 .hero-subtitle {
@@ -412,13 +382,14 @@ a:hover {
 
 .btn-primary {
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  color: white;
-  box-shadow: 0 4px 20px rgba(0, 114, 255, 0.3);
+  color: #131313;
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--primary-color) 25%, transparent);
 }
 
 .btn-primary:hover {
+  color: #131313;
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 114, 255, 0.5);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--primary-color) 40%, transparent);
 }
 
 .btn-secondary {
@@ -551,15 +522,6 @@ a:hover {
   color: white;
   position: relative;
 }
-.section-title::after {
-  content: '';
-  display: block;
-  width: 70px;
-  height: 4px;
-  margin: 1rem auto 0;
-  border-radius: 4px;
-  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-}
 
 .section-subtitle {
   font-size: 1.2rem;
@@ -601,9 +563,9 @@ a:hover {
   align-items: center;
   justify-content: center;
   border-radius: 14px;
-  color: white;
+  color: #131313;
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.35);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--primary-color) 25%, transparent);
 }
 .benefit-icon svg {
   width: 26px;
@@ -641,7 +603,7 @@ a:hover {
   width: 600px;
   max-width: 90%;
   height: 400px;
-  background: radial-gradient(ellipse at center, rgba(0, 114, 255, 0.12), transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.09), transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -676,6 +638,48 @@ a:hover {
 .plan-card .plan-button {
   margin-top: 1.5rem;
 }
+
+/* Características extra ocultas hasta que se despliegan */
+.features-extra {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+}
+.features-extra .features-list {
+  padding-top: 0.1rem;
+}
+.features-extra.open {
+  max-height: 600px;
+}
+.features-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.65rem;
+  background: transparent;
+  border: 1.5px dashed var(--card-border);
+  border-radius: 12px;
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.features-toggle:hover {
+  border-color: var(--primary-color);
+  background: color-mix(in srgb, var(--primary-color) 8%, transparent);
+}
+.features-toggle .toggle-arrow {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+}
+.features-toggle.open .toggle-arrow {
+  transform: rotate(180deg);
+}
 .plan-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -706,7 +710,7 @@ a:hover {
   top: 20px;
   right: -35px;
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  color: white;
+  color: #131313;
   padding: 8px 40px;
   font-size: 0.9rem;
   font-weight: 600;
@@ -724,7 +728,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   border-radius: 18px;
-  color: white;
+  color: #131313;
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   box-shadow: 0 10px 24px color-mix(in srgb, var(--secondary-color) 35%, transparent);
   transition: transform 0.3s ease;
@@ -793,7 +797,7 @@ a:hover {
   width: 100%;
   padding: 1rem;
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  color: white;
+  color: #131313;
   border: none;
   border-radius: 50px;
   font-size: 1.1rem;
@@ -802,8 +806,9 @@ a:hover {
   transition: all 0.3s ease;
 }
 .plan-button:hover {
+  color: #131313;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 114, 255, 0.4);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--primary-color) 35%, transparent);
 }
 
 /* Portfolio Section */
@@ -919,16 +924,16 @@ a:hover {
 .portfolio-link-full {
   display: inline-block;
   font-weight: 600;
-  color: white;
+  color: #131313;
   padding: 0.7rem 1.8rem;
   border-radius: 50px;
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   transition: all 0.3s ease;
 }
 .portfolio-link-full:hover {
-  color: white;
+  color: #131313;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 114, 255, 0.4);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--primary-color) 35%, transparent);
 }
 .portfolio-badge {
   display: inline-block;
@@ -1000,7 +1005,7 @@ a:hover {
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .contact-form select option {
-  background: #111827;
+  background: #141414;
   color: var(--text-color);
 }
 .contact-form input:focus,
@@ -1008,7 +1013,7 @@ a:hover {
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.3);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 30%, transparent);
 }
 .contact-info-item {
   display: flex;
@@ -1238,9 +1243,9 @@ a:hover {
   font-size: 1.1rem;
 }
 
-/* ===== Arma tu propio plan (selector de opciones) ===== */
+/* ===== Arma tu proyecto en 3 pasos (cotizador) ===== */
 .quote-builder {
-  max-width: 860px;
+  max-width: 880px;
   margin: 4rem auto 0;
   padding: 2.5rem 2rem;
   background: var(--card-bg);
@@ -1249,67 +1254,392 @@ a:hover {
   text-align: center;
 }
 .quote-title {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   color: white;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 .quote-subtitle {
   color: var(--text-muted-color);
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.6rem;
 }
-.quote-options {
+.quote-steps {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 0.7rem;
-  margin-bottom: 1.4rem;
+  gap: 0.6rem;
+  margin-bottom: 1.8rem;
+  flex-wrap: wrap;
 }
-.quote-chip input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-.quote-chip span {
-  display: inline-block;
-  padding: 0.55rem 1.2rem;
+.quote-step-dot {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.1rem;
   border-radius: 50px;
   border: 1.5px solid var(--card-border);
   color: var(--text-muted-color);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   user-select: none;
   transition: all 0.25s ease;
 }
-.quote-chip span:hover {
-  border-color: var(--primary-color);
-  color: var(--text-color);
+.quote-step-dot b {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+  font-size: 0.8rem;
 }
-.quote-chip input:checked + span {
+.quote-step-dot.active {
   border-color: var(--primary-color);
-  background: color-mix(in srgb, var(--primary-color) 16%, transparent);
   color: white;
 }
-.quote-other {
-  width: 100%;
-  max-width: 340px;
-  padding: 0.6rem 1.2rem;
-  border-radius: 50px;
-  border: 1.5px solid var(--card-border);
-  background: rgba(0, 0, 0, 0.2);
+.quote-step-dot.active b {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: #131313;
+}
+.quote-step {
+  display: none;
+}
+.quote-step.active {
+  display: block;
+  animation: fadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.quote-step-label {
   color: var(--text-color);
-  font-size: 0.95rem;
-  font-family: inherit;
-  text-align: center;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
 }
-.quote-other:focus {
-  outline: none;
+.quote-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+.option-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.option-card span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 150px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 14px;
+  border: 1.5px solid var(--card-border);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.25s ease;
+}
+.option-card strong {
+  color: var(--text-color);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+.option-card em {
+  font-style: normal;
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.option-card span:hover {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 30%, transparent);
+  transform: translateY(-2px);
 }
-.quote-actions {
+.option-card input:checked + span {
+  border-color: var(--primary-color);
+  background: color-mix(in srgb, var(--primary-color) 14%, transparent);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--secondary-color) 25%, transparent);
+}
+.quote-total {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.8rem;
   margin-top: 1.6rem;
+  padding: 1rem;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--card-border);
+}
+.quote-total > span {
+  color: var(--text-muted-color);
+  font-size: 0.95rem;
+}
+.quote-total strong {
+  font-family: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
+  font-size: 1.7rem;
+  color: white;
+}
+.quote-total .per-year {
+  font-size: 0.95rem;
+  color: var(--text-muted-color);
+  font-weight: 500;
+}
+.quote-note {
+  margin-top: 0.8rem;
+  color: var(--text-muted-color);
+  font-size: 0.85rem;
+}
+.quote-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.quote-nav .btn {
+  padding: 0.85rem 2rem;
+}
+.quote-nav .btn[disabled] {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+.quote-nav [hidden] {
+  display: none !important;
+}
+
+/* Badge bajo el título de planes */
+.plans-badge-wrap {
+  text-align: center;
+  margin: -0.4rem 0 1.6rem;
+}
+.plans-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.4rem;
+  border-radius: 50px;
+  border: 1.5px solid color-mix(in srgb, var(--primary-color) 45%, transparent);
+  background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+.plans-badge:hover {
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--secondary-color) 30%, transparent);
+}
+
+/* Etiqueta del plan de altas cargas */
+.plan-tag {
+  display: inline-block;
+  margin: -0.4rem 0 0.9rem;
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+}
+
+/* ===== Contacto: botón WhatsApp, proceso y FAQ ===== */
+.contact-wsp-btn {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.process-title {
+  font-family: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  margin: 4.5rem 0 2rem;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.process-step {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.8rem 1.4rem;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.process-step:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+.process-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  font-family: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  color: #131313;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--secondary-color) 35%, transparent);
+}
+.process-step h3 {
+  color: white;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+.process-step p {
+  color: var(--text-muted-color);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.faq-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+.faq-item[open] {
+  border-color: var(--primary-color);
+}
+.faq-item summary {
+  padding: 1.1rem 1.4rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::after {
+  content: '+';
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+.faq-item p {
+  padding: 0 1.4rem 1.2rem;
+  color: var(--text-muted-color);
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Carrusel infinito de proyectos (home) ===== */
+.showcase-loop {
+  padding: 40px 0 50px;
+  overflow: hidden;
+}
+.loop-viewport {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 0.5rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 7%, black 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, black 7%, black 93%, transparent);
+}
+.loop-track {
+  display: flex;
+  width: max-content;
+  animation: loopScroll 45s linear infinite;
+  will-change: transform;
+}
+.loop-viewport:hover .loop-track {
+  animation-play-state: paused;
+}
+.loop-card {
+  display: block;
+  width: min(420px, 78vw);
+  margin-right: 1.6rem;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  flex-shrink: 0;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.loop-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-5px);
+}
+.loop-img {
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: top center;
+}
+.loop-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.3rem;
+  font-family: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #131313;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+}
+@keyframes loopScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 768px) {
+  .loop-card {
+    width: 74vw;
+    margin-right: 1rem;
+  }
+  .loop-track {
+    animation-duration: 35s;
+  }
+}
+
+/* Showcase de 3 proyectos en la home */
+.portfolio-showcase.home-showcase {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.home-showcase .showcase-btn {
+  font-size: 0.95rem;
+  padding: 1rem 1.3rem;
+}
+@media (max-width: 900px) {
+  .portfolio-showcase.home-showcase {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===== Portafolio: marco + botón ===== */
@@ -1353,15 +1683,15 @@ a:hover {
   align-items: center;
   gap: 1rem;
   padding: 1.1rem 1.6rem;
-  color: white;
+  color: #131313;
   font-weight: 600;
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   transition: filter 0.3s ease;
   margin-top: auto;
 }
 .showcase-btn:hover {
-  color: white;
+  color: #131313;
   filter: brightness(1.12);
 }
 .showcase-btn .arrow {
