@@ -1,55 +1,54 @@
 <!doctype html>
 <html lang="es">
 <head>
+    <!-- Íconos de interfaz basados en Lucide (lucide.dev), licencia ISC -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/png" href="favicon.png?v=3" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacto - KAMEX Tech</title>
-    <meta name="description" content="Ponte en contacto con nosotros. Envíanos un mensaje o escríbenos por WhatsApp y recibe una propuesta sin compromiso." />
-    <meta property="og:title" content="Contacto - KAMEX Tech" />
-    <meta property="og:description" content="Ponte en contacto con nosotros. Envíanos un mensaje o escríbenos por WhatsApp y recibe una propuesta sin compromiso." />
+    <meta name="theme-color" content="#08090c" />
+    <title>Cotiza tu Página Web | Contacto KAMEX Tech</title>
+    <meta name="description" content="Cotiza tu página web sin compromiso. Escríbenos por WhatsApp al +56 9 4636 1974 o a contacto.kamextech@gmail.com y te respondemos con una propuesta." />
+    <link rel="canonical" href="https://kamextech.vercel.app/contacto" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="KAMEX Tech" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:url" content="https://kamextech.vercel.app/contacto" />
+    <meta property="og:title" content="Cotiza tu Página Web | Contacto KAMEX Tech" />
+    <meta property="og:description" content="Cotiza tu página web sin compromiso. Escríbenos por WhatsApp al +56 9 4636 1974 o a contacto.kamextech@gmail.com y te respondemos con una propuesta." />
+    <meta property="og:image" content="https://kamextech.vercel.app/og-imagen.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Bricolage+Grotesque:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=11">
+    <link rel="stylesheet" href="styles.css?v=20">
 </head>
 <body>
-    <div class="background-animation">
-        <div class="code-particle">HTML</div>
-        <div class="code-particle">CSS</div>
-        <div class="code-particle">JS</div>
-        <div class="code-particle">React</div>
-        <div class="code-particle">Node.js</div>
-        <div class="code-particle">PHP</div>
-        <div class="code-particle">Python</div>
-        <div class="code-particle">Vue</div>
-        <div class="code-particle">Angular</div>
-        <div class="code-particle">TypeScript</div>
-        <div class="code-particle">&lt;/&gt;</div>
-        <div class="code-particle">{}</div>
-        <div class="code-particle">[]</div>
-        <div class="code-particle">()</div>
-    </div>
+    <!-- El flujo de código decorativo lo genera script.js -->
+    <div class="background-animation"></div>
 
     <header class="header">
         <nav class="nav container">
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
                 <span class="logo-text">KAMEX</span>
                 <span class="logo-accent">Tech</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Inicio</a></li>
-                <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
-                <li><a href="portfolio.html" class="nav-link">Portafolio</a></li>
-                <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" class="nav-link">Inicio</a></li>
+                <li><a href="/#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="/portfolio" class="nav-link">Portafolio</a></li>
+                <li><a href="/contacto" class="nav-link active">Contacto</a></li>
             </ul>
-            <div class="mobile-menu-toggle">
+            <button type="button" class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
-            </div>
+            </button>
         </nav>
     </header>
+
+<div class="nav-backdrop" aria-hidden="true"></div>
 
     <main>
         <section class="contact-section">
@@ -59,7 +58,7 @@
 
                 <div class="contact-content">
                     <div class="contact-form-wrapper">
-                        <form class="contact-form" action="https://formsubmit.co/cristobal.chacon2003@gmail.com" method="POST">
+                        <form class="contact-form" action="https://formsubmit.co/contacto.kamextech@gmail.com" method="POST">
                             <div class="form-group">
                                 <label for="name">Nombre</label>
                                 <input type="text" id="name" name="name" required>
@@ -82,7 +81,7 @@
                                 <textarea id="message" name="message" rows="5" placeholder="Cuéntanos sobre tu negocio y tu idea..." required></textarea>
                             </div>
 
-                            <!-- 👇 Campos ocultos -->
+                            <!-- Campos ocultos de FormSubmit (_next solo se usa si falla JavaScript) -->
                             <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                             <input type="hidden" name="_next" value="https://kamextech.vercel.app/gracias.html">
                             <input type="hidden" name="_captcha" value="false">
@@ -94,25 +93,25 @@
                     <div class="contact-info-wrapper">
                         <div class="contact-info-item">
                             <div class="contact-info-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                             </div>
                             <div>
                                 <h3>Correo Electrónico</h3>
-                                <p>cristobal.chacon2003@gmail.com</p>
+                                <p>contacto.kamextech@gmail.com</p>
                             </div>
                         </div>
                         <div class="contact-info-item">
                             <div class="contact-info-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                             </div>
                             <div>
                                 <h3>Teléfono / WhatsApp</h3>
-                                <p><a href="https://wa.me/56940443203" target="_blank" rel="noopener noreferrer">+56 9 4044 3203</a></p>
+                                <p><a href="https://wa.me/56946361974" target="_blank" rel="noopener noreferrer">+56 9 4636 1974</a></p>
                             </div>
                         </div>
                         <div class="contact-info-item">
                             <div class="contact-info-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
                             </div>
                             <div>
                                 <h3>Ubicación</h3>
@@ -121,14 +120,14 @@
                         </div>
                         <div class="contact-info-item">
                             <div class="contact-info-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                             </div>
                             <div>
                                 <h3>Tiempo de respuesta</h3>
                                 <p>Menos de 24 horas hábiles</p>
                             </div>
                         </div>
-                        <a href="https://wa.me/56940443203?text=Hola%20KAMEX%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" class="btn btn-primary contact-wsp-btn" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp →</a>
+                        <a href="https://wa.me/56946361974?text=Hola%20KAMEX%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" class="btn btn-primary contact-wsp-btn" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp →</a>
                     </div>
                 </div>
 
@@ -167,7 +166,7 @@
                         </details>
                         <details class="faq-item">
                             <summary>¿Cómo se paga?</summary>
-                            <p>50% por transferencia para comenzar y el 50% restante contra entrega, cuando tu página ya está funcionando y aprobada por ti.</p>
+                            <p>Hay dos formas. <strong>Opción A:</strong> pagas el desarrollo, 50% por transferencia para comenzar y 50% contra entrega cuando tu página ya está funcionando y aprobada por ti (o en cuotas si lo necesitas). <strong>Opción B:</strong> no pagas desarrollo; pagas una mensualidad desde que tu sitio queda publicado, con permanencia mínima de 12 meses.</p>
                         </details>
                         <details class="faq-item">
                             <summary>¿Qué necesito para empezar?</summary>
@@ -175,7 +174,7 @@
                         </details>
                         <details class="faq-item">
                             <summary>¿La página queda a mi nombre?</summary>
-                            <p>Sí. El sitio y su contenido son tuyos. La mantención anual cubre hosting, dominio, respaldos y soporte para que no te preocupes de nada técnico.</p>
+                            <p>Con la <strong>opción A</strong>, sí: el sitio y su contenido son tuyos. Con la <strong>opción B</strong> el sitio se mantiene publicado mientras la mensualidad esté activa, y nosotros nos encargamos del hosting, el dominio, los respaldos y los cambios. Tus textos, fotos y logo siempre son tuyos.</p>
                         </details>
                     </div>
                 </div>
@@ -187,7 +186,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <a href="index.html" class="footer-logo">
+                    <a href="/" class="footer-logo">
                         <span class="logo-text">KAMEX</span>
                         <span class="logo-accent">Tech</span>
                     </a>
@@ -198,17 +197,17 @@
                 <div class="footer-section">
                     <span class="footer-title">Enlaces</span>
                     <ul class="footer-links">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="index.html#servicios">Servicios</a></li>
-                        <li><a href="portfolio.html">Portafolio</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/#servicios">Servicios</a></li>
+                        <li><a href="/portfolio">Portafolio</a></li>
+                        <li><a href="/contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <span class="footer-title">Contacto</span>
                     <ul class="footer-links">
-                        <li>cristobal.chacon2003@gmail.com</li>
-                        <li>+56 9 4044 3203</li>
+                        <li>contacto.kamextech@gmail.com</li>
+                        <li>+56 9 4636 1974</li>
                         <li>Santiago, Chile</li>
                     </ul>
                 </div>
@@ -219,10 +218,29 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/56940443203?text=Hola%20KAMEX%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+    <!-- Aviso al enviar el formulario: aparece sin salir de la página (lo controla script.js) -->
+    <div class="info-modal envio-modal" id="envio-modal" role="dialog" aria-modal="true" aria-labelledby="envio-titulo" aria-describedby="envio-texto" hidden>
+        <div class="info-modal-box">
+            <button type="button" class="info-modal-close" data-cerrar-envio aria-label="Cerrar">&times;</button>
+            <div class="info-modal-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="envio-modal__ok"><circle cx="12" cy="12" r="10"/><path d="m7.5 12 3 3 6-6"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="envio-modal__error"><circle cx="12" cy="12" r="10"/><path d="M12 7.5v5.5"/><path d="M12 16.5h.01"/></svg>
+            </div>
+            <h3 id="envio-titulo">¡Gracias por contactar a KAMEX Tech!</h3>
+            <div class="info-modal-body">
+                <p id="envio-texto">Recibimos tu mensaje y te responderemos a la brevedad, normalmente en menos de 24 horas hábiles.</p>
+            </div>
+            <div class="envio-modal__acciones">
+                <button type="button" class="btn btn-primary" data-cerrar-envio>¡Okey!</button>
+                <a class="btn btn-secondary envio-modal__wsp" href="https://wa.me/56946361974?text=Hola%20KAMEX%2C%20intent%C3%A9%20escribirles%20desde%20la%20web" target="_blank" rel="noopener noreferrer" hidden>Escribir por WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/56946361974?text=Hola%20KAMEX%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
         <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-1.2 0-2.4-.3-3.5-.8l-.6-.3-4.9.9 1-4.7-.3-.6C6.6 18 6 16.5 6 15 6 9.5 10.5 5 16 5s10 4.5 10 10-4.5 10-10 10zm5.5-7.5c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2s-.8 1-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
     </a>
 
-    <script src="script.js?v=10"></script>
+    <script src="script.js?v=17"></script>
 </body>
 </html>

@@ -2,51 +2,57 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/png" href="favicon.png?v=3" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio - KAMEX Tech</title>
-
-    <meta name="description" content="Explora nuestro portafolio: tiendas online, menús digitales y sistemas de gestión a medida. Proyectos reales, en línea." />
-    <meta property="og:title" content="Portafolio - KAMEX Tech" />
-    <meta property="og:description" content="Explora nuestro portafolio: tiendas online, menús digitales y sistemas de gestión a medida." />
+    <meta name="theme-color" content="#08090c" />
+    <title>Portafolio de Páginas Web | KAMEX Tech</title>
+    <meta name="description" content="Proyectos reales de diseño web hechos en Chile: restaurantes, cafeterías, veterinarias, tiendas online y más. Mira cada sitio en línea." />
+    <link rel="canonical" href="https://kamextech.vercel.app/portfolio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="KAMEX Tech" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:url" content="https://kamextech.vercel.app/portfolio" />
+    <meta property="og:title" content="Portafolio de Páginas Web | KAMEX Tech" />
+    <meta property="og:description" content="Proyectos reales de diseño web hechos en Chile: restaurantes, cafeterías, veterinarias, tiendas online y más. Mira cada sitio en línea." />
+    <meta property="og:image" content="https://kamextech.vercel.app/og-imagen.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Bricolage+Grotesque:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=11">
+    <link rel="stylesheet" href="styles.css?v=20">
 </head>
 
 <body>
 
-<div class="background-animation">
-    <div class="code-particle">HTML</div>
-    <div class="code-particle">CSS</div>
-    <div class="code-particle">JS</div>
-    <div class="code-particle">React</div>
-    <div class="code-particle">Node.js</div>
-</div>
+<!-- El flujo de código decorativo lo genera script.js -->
+<div class="background-animation"></div>
 
 <header class="header">
     <nav class="nav container">
-        <a href="index.html" class="logo">
+        <a href="/" class="logo">
             <span class="logo-text">KAMEX</span>
             <span class="logo-accent">Tech</span>
         </a>
 
-        <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link">Inicio</a></li>
-            <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
-            <li><a href="portfolio.html" class="nav-link active">Portafolio</a></li>
-            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="/" class="nav-link">Inicio</a></li>
+            <li><a href="/#servicios" class="nav-link">Servicios</a></li>
+            <li><a href="/portfolio" class="nav-link active">Portafolio</a></li>
+            <li><a href="/contacto" class="nav-link">Contacto</a></li>
         </ul>
 
-        <div class="mobile-menu-toggle">
+        <button type="button" class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
-        </div>
+        </button>
     </nav>
 </header>
+
+<div class="nav-backdrop" aria-hidden="true"></div>
 
 <main>
 <section class="portfolio-page-section">
@@ -58,132 +64,128 @@
 </p>
 
 <div class="portfolio-showcase">
-
-    <!-- 0 PORTAFOLIO · EDICIÓN BIBLIOTECA -->
-    <div class="showcase-card">
-        <div class="showcase-frame">
-            <div class="showcase-img" style="background-image: url('Imagenes portafolio/portafolio-biblioteca.svg');"></div>
-        </div>
-        <a href="https://portafolio-biblioteca.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
-            Portafolio · Edición Biblioteca <span class="arrow">→</span>
-        </a>
-    </div>
-
-    <!-- BRASA BURGER · HAMBURGUESERÍA -->
-    <div class="showcase-card">
+    <div class="showcase-card" id="brasa-burger">
         <div class="showcase-frame">
             <div class="showcase-img" style="background-image: url('Imagenes portafolio/BrasaBurger.jpg');"></div>
         </div>
         <a href="https://brasa-burger-alpha.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
-            Brasa Burger · Hamburguesería <span class="arrow">→</span>
+            Brasa Burger · Hamburguesería <span class="arrow">&#8594;</span>
         </a>
     </div>
 
-    <!-- 1 OVERDRIVE -->
-    <div class="showcase-card">
-        <div class="showcase-frame">
-            <div class="showcase-img" style="background-image: url('Imagenes portafolio/overdrive.png');"></div>
-        </div>
-        <a href="https://overdrive-woad.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
-            Overdrive · Tienda de Cosplay <span class="arrow">→</span>
-        </a>
-    </div>
-
-    <!-- 2 ARCADE BAR -->
-    <div class="showcase-card">
+    <div class="showcase-card" id="arcade-bar">
         <div class="showcase-frame">
             <div class="showcase-img" style="background-image: url('Imagenes portafolio/ArcadeBar.png');"></div>
         </div>
         <a href="https://pixel-restaurant.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
-            Arcade Bar · Menú Digital <span class="arrow">→</span>
+            Arcade Bar · Menú Digital <span class="arrow">&#8594;</span>
         </a>
     </div>
 
-    <!-- 3 ORIGEN CAFÉ -->
-    <div class="showcase-card">
+    <div class="showcase-card" id="chill-office">
         <div class="showcase-frame">
-            <div class="showcase-img" style="background-image: url('Imagenes portafolio/Origen.png');"></div>
+            <div class="showcase-img" style="background-image: url('Imagenes portafolio/ChillOffice.jpg');"></div>
         </div>
-        <a href="https://origen-cafe-eta.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
-            ORIGEN · Tienda de Café <span class="arrow">→</span>
+        <a href="https://chill-office.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
+            Chill Office · Cafetería <span class="arrow">&#8594;</span>
         </a>
     </div>
 
-    <!-- 4 FERRETERÍA EL GALPÓN -->
-    <div class="showcase-card">
+    <div class="showcase-card" id="akane">
         <div class="showcase-frame">
-            <div class="showcase-img" style="background-image: url('Imagenes portafolio/Ferreteria.png');"></div>
+            <div class="showcase-img" style="background-image: url('Imagenes portafolio/Akane.jpg');"></div>
         </div>
-        <a href="https://ferreteria-el-galpon.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
-            Ferretería EL GALPÓN <span class="arrow">→</span>
+        <a href="https://akane-sushi-nine.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
+            AKANE · Sushi Bar de Autor <span class="arrow">&#8594;</span>
         </a>
     </div>
 
-    <!-- 5 BODEGA -->
-    <div class="showcase-card">
+    <div class="showcase-card" id="vetalia">
         <div class="showcase-frame">
-            <div class="showcase-img" style="background-image: url('Imagenes portafolio/GestorBodega.png');"></div>
+            <div class="showcase-img" style="background-image: url('Imagenes portafolio/Vetalia.jpg');"></div>
+        </div>
+        <a href="https://vetalia-murex.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
+            Vetalia · Clínica Veterinaria <span class="arrow">&#8594;</span>
+        </a>
+    </div>
+
+    <div class="showcase-card" id="encanto-eje-cafetero">
+        <div class="showcase-frame">
+            <div class="showcase-img" style="background-image: url('Imagenes portafolio/EncantoEjeCafetero.jpg');"></div>
+        </div>
+        <a href="https://encantoejecafetero.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
+            Encanto Eje Cafetero · Café de Origen <span class="arrow">&#8594;</span>
+        </a>
+    </div>
+
+    <div class="showcase-card" id="copo-y-cuchara">
+        <div class="showcase-frame">
+            <div class="showcase-img" style="background-image: url('Imagenes portafolio/CopoYCuchara.jpg');"></div>
+        </div>
+        <a href="https://copo-y-cuchara.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
+            Copo &amp; Cuchara · Heladería <span class="arrow">&#8594;</span>
+        </a>
+    </div>
+
+    <div class="showcase-card" id="casa-belmar">
+        <div class="showcase-frame">
+            <div class="showcase-img" style="background-image: url('Imagenes portafolio/CasaBelmar.jpg');"></div>
+        </div>
+        <a href="https://orfebre-joyeria.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
+            Casa Belmar · Joyería y Compraventa <span class="arrow">&#8594;</span>
+        </a>
+    </div>
+
+    <div class="showcase-card" id="escarcha">
+        <div class="showcase-frame">
+            <div class="showcase-img" style="background-image: url('Imagenes portafolio/Escarcha.jpg');"></div>
+        </div>
+        <a href="https://escarcha-pc.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
+            Escarcha · Armado de PC y Componentes <span class="arrow">&#8594;</span>
+        </a>
+    </div>
+
+    <div class="showcase-card" id="overdrive">
+        <div class="showcase-frame">
+            <div class="showcase-img" style="background-image: url('Imagenes portafolio/Overdrive.jpg');"></div>
+        </div>
+        <a href="https://overdrive-woad.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
+            Overdrive · Tienda de Cosplay <span class="arrow">&#8594;</span>
+        </a>
+    </div>
+
+    <div class="showcase-card" id="bodega">
+        <div class="showcase-frame">
+            <div class="showcase-img" style="background-image: url('Imagenes portafolio/Bodega.jpg');"></div>
         </div>
         <a href="https://bodega-gestion.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
-            Bodega · Gestión de Mercadería <span class="arrow">→</span>
+            Bodega · Gestión de Mercadería <span class="arrow">&#8594;</span>
         </a>
     </div>
 
-    <!-- 6 PLANTEL -->
-    <div class="showcase-card">
+    <div class="showcase-card" id="plantel">
         <div class="showcase-frame">
-            <div class="showcase-img" style="background-image: url('Imagenes portafolio/gestorAdmin.png');"></div>
+            <div class="showcase-img" style="background-image: url('Imagenes portafolio/Plantel.jpg');"></div>
         </div>
         <a href="https://plantel-gestion-personal.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
-            Plantel · Gestión de Personal <span class="arrow">→</span>
+            Plantel · Gestión de Personal <span class="arrow">&#8594;</span>
         </a>
     </div>
 
-    <!-- 7 CLÍNICA QUILLAY -->
-    <div class="showcase-card">
+    <div class="showcase-card" id="ferreteria-el-galpon">
         <div class="showcase-frame">
-            <div class="showcase-img" style="background-image: url('Imagenes portafolio/hospital.png');"></div>
+            <div class="showcase-img" style="background-image: url('Imagenes portafolio/Ferreteria.jpg');"></div>
         </div>
-        <a href="https://clinica-quillay.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
-            Clínica Quillay <span class="arrow">→</span>
+        <a href="https://ferreteria-el-galpon.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
+            Ferretería EL GALPÓN <span class="arrow">&#8594;</span>
         </a>
-    </div>
-
-    <!-- 8 PLANETARIO AUSTRAL -->
-    <div class="showcase-card">
-        <div class="showcase-frame">
-            <div class="showcase-img" style="background-image: url('Imagenes portafolio/Planetario.png');"></div>
-        </div>
-        <a href="https://planetario-austral.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
-            Planetario Austral <span class="arrow">→</span>
-        </a>
-    </div>
-
-    <!-- 9 ÉBANO · ALTA SASTRERÍA -->
-    <div class="showcase-card">
-        <div class="showcase-frame">
-            <div class="showcase-img" style="background-image: url('Imagenes portafolio/ebano-sastreria.png');"></div>
-        </div>
-        <a href="https://ebano-sastreria.vercel.app" class="showcase-btn" target="_blank" rel="noopener noreferrer">
-            Ébano · Alta Sastrería <span class="arrow">→</span>
-        </a>
-    </div>
-
-    <!-- 10 TURNERO (sin sitio público) -->
-    <div class="showcase-card">
-        <div class="showcase-frame">
-            <div class="showcase-img" style="background-image: url('Imagenes portafolio/Turnero Paris.jpg');"></div>
-        </div>
-        <span class="showcase-btn disabled">
-            Turnero Minimarket <span class="tag-done">Entregado a cliente</span>
-        </span>
     </div>
 
 </div>
 
 <div class="portfolio-cta">
     <p class="section-subtitle" style="margin-bottom: 1.5rem;">¿Quieres que tu proyecto sea el siguiente?</p>
-    <a href="contacto.html" class="btn btn-primary btn-lg">Contáctanos →</a>
+    <a href="/contacto" class="btn btn-primary btn-lg">Contáctanos →</a>
 </div>
 
 </div>
@@ -194,7 +196,7 @@
     <div class="container">
         <div class="footer-content">
             <div class="footer-section">
-                <a href="index.html" class="footer-logo">
+                <a href="/" class="footer-logo">
                     <span class="logo-text">KAMEX</span>
                     <span class="logo-accent">Tech</span>
                 </a>
@@ -205,17 +207,17 @@
             <div class="footer-section">
                 <span class="footer-title">Enlaces</span>
                 <ul class="footer-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="index.html#servicios">Servicios</a></li>
-                    <li><a href="portfolio.html">Portafolio</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/#servicios">Servicios</a></li>
+                    <li><a href="/portfolio">Portafolio</a></li>
+                    <li><a href="/contacto">Contacto</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <span class="footer-title">Contacto</span>
                 <ul class="footer-links">
-                    <li>cristobal.chacon2003@gmail.com</li>
-                    <li>+56 9 4044 3203</li>
+                    <li>contacto.kamextech@gmail.com</li>
+                    <li>+56 9 4636 1974</li>
                     <li>Santiago, Chile</li>
                 </ul>
             </div>
@@ -226,10 +228,10 @@
     </div>
 </footer>
 
-<a href="https://wa.me/56940443203?text=Hola%20KAMEX%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+<a href="https://wa.me/56946361974?text=Hola%20KAMEX%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
     <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-1.2 0-2.4-.3-3.5-.8l-.6-.3-4.9.9 1-4.7-.3-.6C6.6 18 6 16.5 6 15 6 9.5 10.5 5 16 5s10 4.5 10 10-4.5 10-10 10zm5.5-7.5c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2s-.8 1-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
 </a>
 
-<script src="script.js?v=10"></script>
+<script src="script.js?v=17"></script>
 </body>
 </html>

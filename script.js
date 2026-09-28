@@ -2,24 +2,62 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Menú móvil
+    // ===== Precios =====
+    // Todos los montos salen de precios.js (window.KAMEX_PRECIOS). El HTML trae
+    // los mismos valores como respaldo; aquí se reemplazan por la fuente única
+    // para que un cambio de precio se haga en un solo archivo.
+    const PRECIOS = window.KAMEX_PRECIOS || null;
+    // Separador de miles chileno (punto), sin depender del locale del navegador
+    const miles = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    const clp = n => '$' + miles(n);
+
+    if (PRECIOS) {
+        document.querySelectorAll('[data-precio]').forEach(el => {
+            const valor = el.dataset.precio.split('.')
+                .reduce((obj, clave) => (obj ? obj[clave] : undefined), PRECIOS);
+            if (typeof valor !== 'number') return;
+            const texto = el.hasAttribute('data-sin-signo') ? miles(valor) : clp(valor);
+            el.textContent = (el.dataset.prefijo || '') + texto;
+        });
+    }
+
+    // ===== Menú móvil =====
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const navBackdrop = document.querySelector('.nav-backdrop');
 
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
+        const setMenu = (abrir) => {
+            navMenu.classList.toggle('active', abrir);
+            menuToggle.classList.toggle('active', abrir);
+            if (navBackdrop) navBackdrop.classList.toggle('active', abrir);
+            menuToggle.setAttribute('aria-expanded', String(abrir));
+            menuToggle.setAttribute('aria-label', abrir ? 'Cerrar menú' : 'Abrir menú');
+            // Bloquear el scroll del fondo mientras el panel está abierto
+            document.body.style.overflow = abrir ? 'hidden' : '';
+        };
+
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setMenu(!navMenu.classList.contains('active'));
         });
 
-        // Cerrar menú al hacer clic en un enlace
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                }
-            });
+        // Cerrar al tocar un enlace del menú
+        navMenu.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => setMenu(false));
+        });
+
+        // Cerrar al tocar fuera del panel
+        if (navBackdrop) navBackdrop.addEventListener('click', () => setMenu(false));
+
+        // Cerrar con la tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) setMenu(false);
+        });
+
+        // Si se vuelve a escritorio con el menú abierto, dejar todo limpio
+        window.matchMedia('(min-width: 769px)').addEventListener('change', (ev) => {
+            if (ev.matches) setMenu(false);
         });
     }
 
@@ -67,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     if (!reducedMotion) {
-        document.querySelectorAll('.plan-card, .portfolio-item, .benefit-card, .section-title, .contact-form-wrapper, .contact-info-item, .portfolio-item-full, .showcase-card, .quote-builder, .process-step, .faq-item').forEach(el => {
+        document.querySelectorAll('.plan-card, .portfolio-item, .benefit-card, .section-title, .contact-form-wrapper, .contact-info-item, .portfolio-item-full, .showcase-card, .process-step, .faq-item').forEach(el => {
           el.style.opacity = '0';
           el.style.transform = 'translateY(30px)';
           el.style.transition = 'opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)';
@@ -89,17 +127,167 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 🌧️ Lluvia de partículas de código
-    const particles = document.querySelectorAll('.code-particle');
-    particles.forEach(particle => {
-        const randomX = Math.random() * 100; // posición horizontal
-        const duration = 6 + Math.random() * 6; // 6 a 12 seg
-        const delay = Math.random() * 6; // retraso aleatorio
+    // ===== Fondo decorativo: código desplazándose de izquierda a derecha =====
+    // Cada línea es una lista de pares [claseDeColor, texto]. Se construye con
+    // createElement/textContent, así el navegador nunca interpreta esto como HTML.
+    const CODE_LINES = [
+        [['tk-key','def '],['tk-fn','optimizar_sitio'],['tk-pun','('],['tk-var','cliente'],['tk-pun','): '],['tk-key','return '],['tk-pun','{'],['tk-str','"velocidad"'],['tk-pun',': '],['tk-num','98'],['tk-pun',', '],['tk-str','"seo"'],['tk-pun',': '],['tk-key','True'],['tk-pun','}']],
+        [['tk-key','const '],['tk-var','menu'],['tk-pun',' = '],['tk-key','await '],['tk-fn','fetch'],['tk-pun','('],['tk-str',"'/api/productos'"],['tk-pun',').'],['tk-fn','then'],['tk-pun','('],['tk-var','r'],['tk-pun',' => '],['tk-var','r'],['tk-pun','.'],['tk-fn','json'],['tk-pun','());']],
+        [['tk-com','# control de stock en tiempo real  '],['tk-key','class '],['tk-cls','Inventario'],['tk-pun',': '],['tk-key','def '],['tk-fn','alertar_vencimiento'],['tk-pun','('],['tk-var','self'],['tk-pun',', '],['tk-var','dias'],['tk-pun','='],['tk-num','7'],['tk-pun','):']],
+        [['tk-key','public async '],['tk-cls','Task'],['tk-pun','<'],['tk-cls','Reserva'],['tk-pun','> '],['tk-fn','CrearReserva'],['tk-pun','('],['tk-cls','int '],['tk-var','clienteId'],['tk-pun',') { '],['tk-key','return await '],['tk-var','_db'],['tk-pun','.'],['tk-fn','GuardarAsync'],['tk-pun','(); }']],
+        [['tk-key','import '],['tk-var','pandas'],['tk-key',' as '],['tk-var','pd'],['tk-pun','; '],['tk-var','df'],['tk-pun',' = '],['tk-var','pd'],['tk-pun','.'],['tk-fn','read_excel'],['tk-pun','('],['tk-str','"mermas.xlsx"'],['tk-pun',').'],['tk-fn','groupby'],['tk-pun','('],['tk-str','"categoria"'],['tk-pun',').'],['tk-fn','sum'],['tk-pun','()']],
+        [['tk-key','export default function '],['tk-fn','Carrito'],['tk-pun','({ '],['tk-var','items'],['tk-pun',' }) { '],['tk-key','return '],['tk-pun','<'],['tk-cls','Total'],['tk-pun',' '],['tk-var','valor'],['tk-pun','={'],['tk-fn','sumar'],['tk-pun','('],['tk-var','items'],['tk-pun',')} /> }']],
+        [['tk-var','db'],['tk-pun','.'],['tk-fn','query'],['tk-pun','('],['tk-str',"'SELECT * FROM pedidos WHERE estado = $1'"],['tk-pun',', ['],['tk-str',"'pendiente'"],['tk-pun',']);']],
+        [['tk-pun','@'],['tk-fn','app'],['tk-pun','.'],['tk-fn','route'],['tk-pun','('],['tk-str','"/turnos/siguiente"'],['tk-pun',')  '],['tk-key','def '],['tk-fn','siguiente_turno'],['tk-pun','(): '],['tk-key','return '],['tk-fn','jsonify'],['tk-pun','('],['tk-var','numero'],['tk-pun','='],['tk-var','n'],['tk-pun',' + '],['tk-num','1'],['tk-pun',')']],
+        [['tk-com','// despliegue en Hostinger  '],['tk-key','const '],['tk-var','build'],['tk-pun',' = '],['tk-key','await '],['tk-fn','deploy'],['tk-pun','({ '],['tk-var','ssl'],['tk-pun',': '],['tk-key','true'],['tk-pun',', '],['tk-var','cdn'],['tk-pun',': '],['tk-key','true'],['tk-pun',' });']]
+    ];
 
-        particle.style.left = `${randomX}%`;
-        particle.style.animationDuration = `${duration}s`;
-        particle.style.animationDelay = `${delay}s`;
-    });
+    const bgLayer = document.querySelector('.background-animation');
+    if (bgLayer && !reducedMotion) {
+        const stream = document.createElement('div');
+        stream.className = 'code-stream';
+        stream.setAttribute('aria-hidden', 'true');
+
+        CODE_LINES.forEach((tokens, i) => {
+            const row = document.createElement('div');
+            row.className = 'code-row';
+            row.style.top = (5 + i * 10.2) + '%';
+            row.style.animationDuration = (36 + Math.random() * 26).toFixed(1) + 's';
+            // Delay negativo: cada línea arranca ya avanzada, sin esperas iniciales
+            row.style.animationDelay = '-' + (Math.random() * 40).toFixed(1) + 's';
+
+            tokens.forEach(([cls, text]) => {
+                const span = document.createElement('span');
+                span.className = cls;
+                span.textContent = text;
+                row.appendChild(span);
+            });
+            stream.appendChild(row);
+        });
+
+        bgLayer.appendChild(stream);
+    }
+
+    // ===== Ventana emergente de los 4 beneficios del inicio =====
+    // El contenido es estático y definido aquí (no viene de ninguna entrada
+    // del usuario), por eso es seguro insertarlo en el cuadro de diálogo.
+    const INFO_CONTENT = {
+        tecnologias: {
+            title: 'Tecnologías que Usamos',
+            body: `
+                <p>No usamos plantillas prearmadas: cada sitio se construye a mano con herramientas profesionales, las mismas que ocupan las empresas grandes.</p>
+                <p><strong>Para la parte visual</strong></p>
+                <div class="info-tags">
+                    <span class="info-tag">HTML5</span><span class="info-tag">CSS3</span>
+                    <span class="info-tag">JavaScript</span><span class="info-tag">React</span>
+                    <span class="info-tag">Vite</span><span class="info-tag">Tailwind</span>
+                </div>
+                <p><strong>Para sistemas y datos</strong></p>
+                <div class="info-tags">
+                    <span class="info-tag">Node.js</span><span class="info-tag">Python</span>
+                    <span class="info-tag">PostgreSQL</span><span class="info-tag">APIs REST</span>
+                    <span class="info-tag">Excel / Power Query</span>
+                </div>
+                <p><strong>Herramientas de trabajo</strong></p>
+                <div class="info-tags">
+                    <span class="info-tag">Visual Studio Code</span><span class="info-tag">Git &amp; GitHub</span>
+                    <span class="info-tag">Hostinger</span>
+                </div>
+                <p>Todo queda documentado y ordenado, de modo que tu proyecto pueda crecer más adelante sin tener que empezar de cero.</p>
+            `
+        },
+        responsive: {
+            title: '100% Responsivo',
+            body: `
+                <p><strong>Responsivo</strong> significa que tu página se adapta sola al tamaño de cualquier pantalla: no es una versión reducida, es el mismo sitio reacomodándose para verse bien en cada dispositivo.</p>
+                <ul>
+                    <li><strong>Celular:</strong> menús que se abren con el pulgar, textos legibles sin hacer zoom y botones grandes.</li>
+                    <li><strong>Tablet:</strong> aprovecha el ancho extra sin dejar espacios vacíos.</li>
+                    <li><strong>Computador:</strong> diseño amplio, con imágenes en alta calidad.</li>
+                </ul>
+                <p>Esto importa porque <strong>la mayoría de tus clientes te va a encontrar desde el celular</strong>. Una web que se ve mal en el teléfono pierde ventas antes de que alguien lea lo que ofreces.</p>
+                <p>Probamos cada proyecto en pantallas reales de distintos tamaños antes de entregarlo.</p>
+            `
+        },
+        seguridad: {
+            title: 'Hosting Seguro con Hostinger',
+            body: `
+                <p>Publicamos y mantenemos tu proyecto en <strong>Hostinger</strong>, uno de los proveedores de hosting más usados del mundo. Tú no tienes que configurar nada técnico.</p>
+                <ul>
+                    <li><strong>Certificado SSL (HTTPS):</strong> el candado del navegador. Todo lo que un visitante escriba viaja cifrado y Google no marca tu sitio como "no seguro".</li>
+                    <li><strong>Respaldos automáticos:</strong> copias periódicas del sitio. Si algo falla, se restaura.</li>
+                    <li><strong>Protección contra ataques:</strong> cortafuegos y mitigación de DDoS incluidos en la infraestructura.</li>
+                    <li><strong>Dominio propio:</strong> tunegocio.cl en vez de una dirección genérica.</li>
+                    <li><strong>Disponibilidad 24/7:</strong> monitoreo constante para que tu web no se caiga.</li>
+                </ul>
+                <p>Además, los sitios que entregamos son <strong>estáticos o con base de datos aislada</strong>: no guardan contraseñas de tus clientes en el servidor, así que no hay información sensible que robar.</p>
+                <p>Con la <strong>opción B (mensualidad)</strong> todo esto va incluido, sin costos escondidos.</p>
+            `
+        },
+        soporte: {
+            title: 'Soporte Real',
+            body: `
+                <p>Hablas directamente por WhatsApp con la persona que construyó tu web. No hay call center, ni tickets, ni respuestas automáticas.</p>
+                <ul>
+                    <li><strong>Respuesta en menos de 24 horas hábiles.</strong></li>
+                    <li><strong>Explicaciones en español simple</strong>, sin tecnicismos innecesarios.</li>
+                    <li><strong>Capacitación incluida</strong> para que sepas administrar tu sitio.</li>
+                    <li><strong>Cambios incluidos</strong> con la opción B (1 al mes en el Plan Básico y 4 en el Premium).</li>
+                </ul>
+                <p>Si algo se cae o deja de funcionar, lo resolvemos nosotros: no tienes que buscar a otra persona ni entender el problema técnico.</p>
+            `
+        }
+    };
+
+    const infoModal = document.getElementById('info-modal');
+    if (infoModal) {
+        const modalBox = infoModal.querySelector('.info-modal-box');
+        const modalTitle = document.getElementById('info-modal-title');
+        const modalBody = document.getElementById('info-modal-body');
+        const modalIcon = document.getElementById('info-modal-icon');
+        const closeBtn = infoModal.querySelector('.info-modal-close');
+        let lastFocused = null;
+
+        const openModal = (key, sourceCard) => {
+            const data = INFO_CONTENT[key];
+            if (!data) return;
+            lastFocused = sourceCard || document.activeElement;
+
+            modalTitle.textContent = data.title;
+            modalBody.innerHTML = data.body;
+
+            // Reutiliza el mismo ícono de la tarjeta que se pulsó
+            modalIcon.textContent = '';
+            const srcIcon = sourceCard && sourceCard.querySelector('.benefit-icon svg');
+            if (srcIcon) modalIcon.appendChild(srcIcon.cloneNode(true));
+
+            infoModal.hidden = false;
+            // Forzar reflow para que la transición de entrada se vea
+            void infoModal.offsetWidth;
+            infoModal.classList.add('open');
+            document.body.classList.add('modal-open');
+            closeBtn.focus();
+        };
+
+        const closeModal = () => {
+            infoModal.classList.remove('open');
+            document.body.classList.remove('modal-open');
+            setTimeout(() => { infoModal.hidden = true; }, 300);
+            if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+        };
+
+        document.querySelectorAll('.benefit-card[data-modal]').forEach(card => {
+            card.addEventListener('click', () => openModal(card.dataset.modal, card));
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+        infoModal.addEventListener('click', (e) => {
+            if (!modalBox.contains(e.target)) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && infoModal.classList.contains('open')) closeModal();
+        });
+    }
 
     // Planes: botón "Ver todo lo que incluye" despliega las características extra
     document.querySelectorAll('.features-toggle').forEach(btn => {
@@ -112,58 +300,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Arma tu proyecto en 3 pasos: precio estimado en vivo + envío por WhatsApp
-    const quoteBuilder = document.querySelector('.quote-builder');
-    if (quoteBuilder) {
-        const steps = [...quoteBuilder.querySelectorAll('.quote-step')];
-        const dots = [...quoteBuilder.querySelectorAll('.quote-step-dot')];
-        const prevBtn = document.getElementById('quote-prev');
-        const nextBtn = document.getElementById('quote-next');
-        const sendBtn = document.getElementById('quote-send');
-        const totalEl = document.getElementById('quote-total-amount');
-        const perYearEl = quoteBuilder.querySelector('.per-year');
-        let current = 1;
 
-        const clp = n => '$' + n.toLocaleString('es-CL');
-
-        const updateTotal = () => {
-            const base = quoteBuilder.querySelector('input[name="q-base"]:checked');
-            const extras = [...quoteBuilder.querySelectorAll('input[type="checkbox"]:checked')];
-            let total = base ? Number(base.dataset.price) : 0;
-            let yearly = 0;
-            extras.forEach(i => {
-                if (i.dataset.yearly) {
-                    yearly += Number(i.dataset.price);
-                } else {
-                    total += Number(i.dataset.price);
-                }
-            });
-            totalEl.textContent = clp(total);
-            perYearEl.textContent = yearly ? ` + ${clp(yearly)}/año` : '';
-
-            const parts = [];
-            if (base) parts.push(base.value);
-            extras.forEach(i => parts.push(i.value));
-            const msg = 'Hola KAMEX, quiero cotizar: ' + parts.join(', ') +
-                '. Precio estimado: ' + clp(total) + (yearly ? ` + ${clp(yearly)}/año` : '') + '.';
-            sendBtn.href = 'https://wa.me/56940443203?text=' + encodeURIComponent(msg);
-        };
-
-        const goTo = (n) => {
-            current = Math.min(3, Math.max(1, n));
-            steps.forEach(s => s.classList.toggle('active', Number(s.dataset.step) === current));
-            dots.forEach((d, i) => d.classList.toggle('active', i + 1 <= current));
-            prevBtn.disabled = current === 1;
-            nextBtn.hidden = current === 3;
-            sendBtn.hidden = current !== 3;
-        };
-
-        prevBtn.addEventListener('click', () => goTo(current - 1));
-        nextBtn.addEventListener('click', () => goTo(current + 1));
-        dots.forEach((d, i) => d.addEventListener('click', () => goTo(i + 1)));
-        quoteBuilder.querySelectorAll('input').forEach(i => i.addEventListener('change', updateTotal));
-        goTo(1);
-        updateTotal();
+    // "¿Por qué una mensualidad?": entrada escalonada de las 4 tarjetas.
+    // Anima la propiedad `translate` (no `transform`) para no pisar el
+    // levantamiento del hover. Sin JS o con movimiento reducido quedan quietas.
+    const mensual = document.querySelector('.mensual');
+    if (mensual && !reducedMotion && 'IntersectionObserver' in window) {
+        mensual.querySelectorAll('.mensual-card').forEach((card, i) => card.style.setProperty('--orden', i));
+        mensual.classList.add('mensual--preparada');
+        new IntersectionObserver((entradas, obs) => {
+            if (!entradas.some(e => e.isIntersecting)) return;
+            mensual.classList.add('mensual--visible');
+            obs.disconnect();
+        }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }).observe(mensual);
     }
 
     // Inclinación 3D uniforme en todas las tarjetas (la misma de "Tu Web Increíble")
@@ -183,29 +332,109 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Parallax: fondo, orbes, anillos y marcos se desplazan hacia donde va el mouse
-        const parallaxTargets = [
-            [document.querySelector('.background-animation'), 30, 20],
-            [document.querySelector('.deco-ring'), 46, 34],
-            [document.querySelector('.deco-dots'), 60, 44],
-            [document.querySelector('.floating-card'), 24, 18]
-        ].filter(t => t[0]);
-        if (parallaxTargets.length) {
-            let targetX = 0, targetY = 0, curX = 0, curY = 0;
-            window.addEventListener('mousemove', (e) => {
-                targetX = e.clientX / window.innerWidth - 0.5;
-                targetY = e.clientY / window.innerHeight - 0.5;
-            });
-            const animateParallax = () => {
-                curX += (targetX - curX) * 0.06;
-                curY += (targetY - curY) * 0.06;
-                parallaxTargets.forEach(([el, fx, fy]) => {
-                    el.style.translate = `${(curX * fx).toFixed(1)}px ${(curY * fy).toFixed(1)}px`;
+        // El fondo (código, orbes y anillos) se mueve solo con sus propias
+        // animaciones CSS: ya no sigue al cursor.
+    }
+
+
+    // Formulario de contacto: se envía a FormSubmit sin salir de la página y
+    // avisa con una ventana. Si JavaScript falla, el formulario se envía igual
+    // de la forma tradicional y termina en gracias.html.
+    const contactForm = document.querySelector('.contact-form');
+    const envioModal = document.getElementById('envio-modal');
+    if (contactForm && envioModal && window.fetch) {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const textoOriginal = submitBtn.textContent;
+        const envioTitulo = document.getElementById('envio-titulo');
+        const envioTexto = document.getElementById('envio-texto');
+        const envioOk = envioModal.querySelector('.envio-modal__acciones .btn-primary');
+        const envioWsp = envioModal.querySelector('.envio-modal__wsp');
+        const destino = contactForm.getAttribute('action').replace('formsubmit.co/', 'formsubmit.co/ajax/');
+        let enviando = false;
+
+        const AVISOS = {
+            ok: {
+                titulo: '¡Gracias por contactar a KAMEX Tech!',
+                texto: 'Recibimos tu mensaje y te responderemos a la brevedad, normalmente en menos de 24 horas hábiles.',
+                boton: '¡Okey!'
+            },
+            error: {
+                titulo: 'No pudimos enviar tu mensaje',
+                texto: 'Revisa tu conexión e inténtalo otra vez. Si prefieres, escríbenos directo por WhatsApp.',
+                boton: 'Intentar de nuevo'
+            }
+        };
+
+        const abrirAviso = (tipo) => {
+            const aviso = AVISOS[tipo];
+            envioModal.classList.toggle('es-error', tipo === 'error');
+            envioTitulo.textContent = aviso.titulo;
+            envioTexto.textContent = aviso.texto;
+            envioOk.textContent = aviso.boton;
+            envioWsp.hidden = tipo !== 'error';
+            envioModal.hidden = false;
+            void envioModal.offsetWidth;
+            envioModal.classList.add('open');
+            document.body.classList.add('modal-open');
+            // La ventana pasa de oculta a visible con transición: el foco se da
+            // un instante después, cuando el botón ya se puede enfocar.
+            setTimeout(() => envioOk.focus(), 80);
+        };
+
+        const cerrarAviso = () => {
+            if (!envioModal.classList.contains('open')) return;
+            envioModal.classList.remove('open');
+            document.body.classList.remove('modal-open');
+            setTimeout(() => { envioModal.hidden = true; }, 300);
+            submitBtn.focus();
+        };
+
+        envioModal.querySelectorAll('[data-cerrar-envio]').forEach(b => b.addEventListener('click', cerrarAviso));
+        envioModal.addEventListener('click', (e) => { if (e.target === envioModal) cerrarAviso(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarAviso(); });
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (enviando) return;
+
+            const datos = Object.fromEntries(new FormData(contactForm));
+            delete datos._next;
+
+            // Trampa para bots: si completaron el campo oculto, se simula el envío
+            if (datos._honey) {
+                contactForm.reset();
+                abrirAviso('ok');
+                return;
+            }
+
+            enviando = true;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando…';
+            const control = new AbortController();
+            const limite = setTimeout(() => control.abort(), 15000);
+
+            try {
+                const respuesta = await fetch(destino, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(datos),
+                    signal: control.signal
                 });
-                requestAnimationFrame(animateParallax);
-            };
-            animateParallax();
-        }
+                const resultado = await respuesta.json().catch(() => ({}));
+                if (!respuesta.ok || String(resultado.success) !== 'true') {
+                    throw new Error(resultado.message || 'Respuesta ' + respuesta.status);
+                }
+                contactForm.reset();
+                abrirAviso('ok');
+            } catch (error) {
+                abrirAviso('error');
+            } finally {
+                clearTimeout(limite);
+                enviando = false;
+                submitBtn.disabled = false;
+                submitBtn.textContent = textoOriginal;
+            }
+        });
     }
 
 });

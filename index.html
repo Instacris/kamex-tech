@@ -1,58 +1,136 @@
 <!doctype html>
 <html lang="es">
 	<head>
+		<!-- Íconos de interfaz basados en Lucide (lucide.dev), licencia ISC -->
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/png" href="favicon.png" />
+		<link rel="icon" type="image/png" href="favicon.png?v=3" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>KAMEX Tech - Desarrollo Web y Sistemas a Medida</title>
-		<meta name="description" content="Creamos tu página web moderna, responsiva y optimizada: menús digitales QR, sitios comerciales y sistemas de gestión a medida. Santiago, Chile." />
-		<meta property="og:title" content="KAMEX Tech - Desarrollo Web y Sistemas a Medida" />
-		<meta property="og:description" content="Creamos tu página web moderna, responsiva y optimizada: menús digitales QR, sitios comerciales y sistemas de gestión a medida." />
+		<meta name="theme-color" content="#08090c" />
+		<title>Diseño de Páginas Web en Chile | KAMEX Tech</title>
+		<meta name="description" content="Diseño y desarrollo de páginas web profesionales en Santiago, Chile. Sitios para restaurantes, tiendas y negocios desde $280.000 o $25.000 al mes. Cotiza por WhatsApp." />
+		<link rel="canonical" href="https://kamextech.vercel.app/" />
+		<!-- Verificación de Google Search Console (cuenta contacto.kamextech): no borrar -->
+		<meta name="google-site-verification" content="o0Ef3kMPpXym2l4PM1Xxe7JGtw3QnZg35edq6z-z3ro" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="KAMEX Tech" />
+		<meta property="og:locale" content="es_CL" />
+		<meta property="og:url" content="https://kamextech.vercel.app/" />
+		<meta property="og:title" content="Diseño de Páginas Web en Chile | KAMEX Tech" />
+		<meta property="og:description" content="Diseño y desarrollo de páginas web profesionales en Santiago, Chile. Sitios para restaurantes, tiendas y negocios desde $280.000 o $25.000 al mes. Cotiza por WhatsApp." />
+		<meta property="og:image" content="https://kamextech.vercel.app/og-imagen.jpg" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<!-- Datos del negocio para Google (no es JavaScript: no lo bloquea la CSP) -->
+		<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@graph": [
+		    {
+		      "@type": "ProfessionalService",
+		      "@id": "https://kamextech.vercel.app/#negocio",
+		      "name": "KAMEX Tech",
+		      "url": "https://kamextech.vercel.app/",
+		      "logo": "https://kamextech.vercel.app/favicon.png",
+		      "image": "https://kamextech.vercel.app/og-imagen.jpg",
+		      "description": "Diseño y desarrollo de páginas web, menús digitales QR y sistemas de gestión a medida para negocios en Chile.",
+		      "telephone": "+56946361974",
+		      "email": "contacto.kamextech@gmail.com",
+		      "address": {
+		        "@type": "PostalAddress",
+		        "addressLocality": "Santiago",
+		        "addressRegion": "Región Metropolitana",
+		        "addressCountry": "CL"
+		      },
+		      "areaServed": {
+		        "@type": "Country",
+		        "name": "Chile"
+		      },
+		      "priceRange": "$280.000 - $900.000+",
+		      "hasOfferCatalog": {
+		        "@type": "OfferCatalog",
+		        "name": "Planes de desarrollo web",
+		        "itemListElement": [
+		          {
+		            "@type": "Offer",
+		            "itemOffered": {
+		              "@type": "Service",
+		              "name": "Plan Básico: página web"
+		            },
+		            "price": "280000",
+		            "priceCurrency": "CLP"
+		          },
+		          {
+		            "@type": "Offer",
+		            "itemOffered": {
+		              "@type": "Service",
+		              "name": "Plan Premium: página web"
+		            },
+		            "price": "450000",
+		            "priceCurrency": "CLP"
+		          },
+		          {
+		            "@type": "Offer",
+		            "itemOffered": {
+		              "@type": "Service",
+		              "name": "Sistema a Medida"
+		            },
+		            "priceSpecification": {
+		              "@type": "PriceSpecification",
+		              "minPrice": "900000",
+		              "priceCurrency": "CLP"
+		            }
+		          }
+		        ]
+		      }
+		    },
+		    {
+		      "@type": "WebSite",
+		      "@id": "https://kamextech.vercel.app/#sitio",
+		      "url": "https://kamextech.vercel.app/",
+		      "name": "KAMEX Tech",
+		      "inLanguage": "es-CL",
+		      "publisher": {
+		        "@id": "https://kamextech.vercel.app/#negocio"
+		      }
+		    }
+		  ]
+		}
+		</script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Bricolage+Grotesque:wght@600;700;800&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="styles.css?v=11">
+		<link rel="stylesheet" href="styles.css?v=20">
 	</head>
 	<body>
-		<div class="background-animation">
-			<div class="code-particle">HTML</div>
-			<div class="code-particle">CSS</div>
-			<div class="code-particle">JS</div>
-			<div class="code-particle">React</div>
-			<div class="code-particle">Node.js</div>
-			<div class="code-particle">PHP</div>
-			<div class="code-particle">Python</div>
-			<div class="code-particle">Vue</div>
-			<div class="code-particle">Angular</div>
-			<div class="code-particle">TypeScript</div>
-			<div class="code-particle">&lt;/&gt;</div>
-			<div class="code-particle">{}</div>
-			<div class="code-particle">[]</div>
-			<div class="code-particle">()</div>
-		</div>
+		<!-- El flujo de código decorativo lo genera script.js (mismo en todas las páginas) -->
+		<div class="background-animation"></div>
 
 		<header class="header">
 			<nav class="nav container">
-				<a href="index.html" class="logo">
+				<a href="/" class="logo">
 					<span class="logo-text">KAMEX</span>
 					<span class="logo-accent">Tech</span>
 				</a>
-				<ul class="nav-menu">
-					<li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
-					<li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
-					<li><a href="portfolio.html" class="nav-link">Portafolio</a></li>
-					<li><a href="contacto.html" class="nav-link">Contacto</a></li>
+				<ul class="nav-menu" id="nav-menu">
+					<li><a href="/#inicio" class="nav-link">Inicio</a></li>
+					<li><a href="/#servicios" class="nav-link">Servicios</a></li>
+					<li><a href="/portfolio" class="nav-link">Portafolio</a></li>
+					<li><a href="/contacto" class="nav-link">Contacto</a></li>
 				</ul>
-				<div class="mobile-menu-toggle">
+				<button type="button" class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
 					<div class="line1"></div>
 					<div class="line2"></div>
 					<div class="line3"></div>
-				</div>
+				</button>
 			</nav>
 		</header>
 
+<div class="nav-backdrop" aria-hidden="true"></div>
+
 		<main>
 			<section id="inicio" class="hero">
+				<canvas class="rising-lines" aria-hidden="true"></canvas>
 				<div class="hero-deco deco-ring" aria-hidden="true"></div>
 				<div class="hero-deco deco-dots" aria-hidden="true"></div>
 				<div class="hero-content container">
@@ -66,7 +144,7 @@
 						</p>
 						<div class="hero-buttons">
 							<a href="#servicios" class="btn btn-primary">Ver Planes</a>
-							<a href="portfolio.html" class="btn btn-secondary">Portafolio</a>
+							<a href="/portfolio" class="btn btn-secondary">Portafolio</a>
 						</div>
 					</div>
 					<div class="hero-visual">
@@ -78,63 +156,7 @@
 									<span class="dot-style green"></span>
 								</div>
 							</div>
-							<div class="card-content">
-								<div class="code-line">
-									<span class="code-tag">&lt;html&gt;</span>
-								</div>
-								<div class="code-line">
-									<span class="code-indent">  </span>
-									<span class="code-tag">&lt;body&gt;</span>
-								</div>
-								<div class="code-line">
-									<span class="code-indent">    </span>
-									<span class="code-tag">&lt;h1&gt;</span>
-									<span class="code-text">Tu Web Increíble</span>
-									<span class="code-tag">&lt;/h1&gt;</span>
-								</div>
-								<div class="code-line">
-									<span class="code-indent">  </span>
-									<span class="code-tag">&lt;/body&gt;</span>
-								</div>
-								<div class="code-line">
-									<span class="code-tag">&lt;/html&gt;</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="benefits">
-				<div class="container">
-					<div class="benefits-grid">
-						<div class="benefit-card">
-							<div class="benefit-icon">
-								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-							</div>
-							<h3>Entrega Rápida</h3>
-							<p>Tu sitio listo en días, no en meses. Nos comprometemos con plazos claros.</p>
-						</div>
-						<div class="benefit-card">
-							<div class="benefit-icon">
-								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
-							</div>
-							<h3>100% Responsivo</h3>
-							<p>Se ve perfecto en celular, tablet y computador. La mayoría de tus clientes vienen del móvil.</p>
-						</div>
-						<div class="benefit-card">
-							<div class="benefit-icon">
-								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-							</div>
-							<h3>Hosting Seguro</h3>
-							<p>Dominio, hosting con candado (HTTPS) y respaldos incluidos en la mantención anual.</p>
-						</div>
-						<div class="benefit-card">
-							<div class="benefit-icon">
-								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-							</div>
-							<h3>Soporte Real</h3>
-							<p>Hablas directo con quien construye tu web, por WhatsApp. Sin call centers ni tickets.</p>
+							<pre class="card-content" aria-hidden="true"><code><span class="code-line"><span class="code-tag">&lt;html&gt;</span></span><span class="code-line"><span class="code-tag">&lt;body&gt;</span></span><span class="code-line"><span class="code-tag">&lt;h1&gt;</span> <span class="code-text">Tu Web Increíble</span> <span class="code-tag">&lt;/h1&gt;</span></span><span class="code-line"><span class="code-tag">&lt;/body&gt;</span></span><span class="code-line"><span class="code-tag">&lt;/html&gt;</span></span></code></pre>
 						</div>
 					</div>
 				</div>
@@ -142,93 +164,161 @@
 
 			<section class="showcase-loop">
 				<div class="container">
-					<h2 class="section-title">¿Dudas de cómo se vería tu proyecto?</h2>
-					<p class="section-subtitle">Visita uno de estos trabajos realizados: haz clic en cualquiera para explorar el portafolio.</p>
+					<h2 class="section-title">Muestras de proyectos realizados</h2>
+					<p class="section-subtitle">Haz clic en cualquiera para explorar el portafolio.</p>
 				</div>
 				<div class="loop-viewport">
 					<div class="loop-track">
-						<a href="portfolio.html" class="loop-card">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/overdrive.png');"></div>
-							<span class="loop-label">Overdrive <span class="arrow">→</span></span>
-						</a>
-						<a href="portfolio.html" class="loop-card">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/portafolio-biblioteca.svg');"></div>
-							<span class="loop-label">Mi Portafolio <span class="arrow">→</span></span>
-						</a>
-						<a href="portfolio.html" class="loop-card">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/ArcadeBar.png');"></div>
-							<span class="loop-label">Arcade Bar <span class="arrow">→</span></span>
-						</a>
-						<a href="portfolio.html" class="loop-card">
+						<a href="/portfolio#brasa-burger" class="loop-card">
 							<div class="loop-img" style="background-image: url('Imagenes portafolio/BrasaBurger.jpg');"></div>
 							<span class="loop-label">Brasa Burger <span class="arrow">→</span></span>
 						</a>
-						<a href="portfolio.html" class="loop-card">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/gestorAdmin.png');"></div>
-							<span class="loop-label">Gestión de Personal <span class="arrow">→</span></span>
+						<a href="/portfolio#arcade-bar" class="loop-card">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/ArcadeBar.png');"></div>
+							<span class="loop-label">Arcade Bar <span class="arrow">→</span></span>
 						</a>
-						<a href="portfolio.html" class="loop-card">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/Origen.png');"></div>
-							<span class="loop-label">ORIGEN Café <span class="arrow">→</span></span>
+						<a href="/portfolio#chill-office" class="loop-card">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/ChillOffice.jpg');"></div>
+							<span class="loop-label">Chill Office <span class="arrow">→</span></span>
 						</a>
-						<a href="portfolio.html" class="loop-card">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/Ferreteria.png');"></div>
-							<span class="loop-label">Ferretería EL GALPÓN <span class="arrow">→</span></span>
+						<a href="/portfolio#akane" class="loop-card">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/Akane.jpg');"></div>
+							<span class="loop-label">AKANE · Sushi Bar <span class="arrow">→</span></span>
 						</a>
-						<a href="portfolio.html" class="loop-card">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/GestorBodega.png');"></div>
+						<a href="/portfolio#vetalia" class="loop-card">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/Vetalia.jpg');"></div>
+							<span class="loop-label">Vetalia · Veterinaria <span class="arrow">→</span></span>
+						</a>
+						<a href="/portfolio#encanto-eje-cafetero" class="loop-card">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/EncantoEjeCafetero.jpg');"></div>
+							<span class="loop-label">Encanto Eje Cafetero <span class="arrow">→</span></span>
+						</a>
+						<a href="/portfolio#copo-y-cuchara" class="loop-card">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/CopoYCuchara.jpg');"></div>
+							<span class="loop-label">Copo &amp; Cuchara <span class="arrow">→</span></span>
+						</a>
+						<a href="/portfolio#casa-belmar" class="loop-card">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/CasaBelmar.jpg');"></div>
+							<span class="loop-label">Casa Belmar · Joyería <span class="arrow">→</span></span>
+						</a>
+						<a href="/portfolio#escarcha" class="loop-card">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/Escarcha.jpg');"></div>
+							<span class="loop-label">Escarcha · Armado de PC <span class="arrow">→</span></span>
+						</a>
+						<a href="/portfolio#overdrive" class="loop-card">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/Overdrive.jpg');"></div>
+							<span class="loop-label">Overdrive <span class="arrow">→</span></span>
+						</a>
+						<a href="/portfolio#bodega" class="loop-card">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/Bodega.jpg');"></div>
 							<span class="loop-label">Bodega · Gestión <span class="arrow">→</span></span>
 						</a>
-						<a href="portfolio.html" class="loop-card">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/hospital.png');"></div>
-							<span class="loop-label">Clínica Quillay <span class="arrow">→</span></span>
+						<a href="/portfolio#plantel" class="loop-card">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/Plantel.jpg');"></div>
+							<span class="loop-label">Plantel · Personal <span class="arrow">→</span></span>
 						</a>
-						<a href="portfolio.html" class="loop-card">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/Planetario.png');"></div>
-							<span class="loop-label">Planetario Austral <span class="arrow">→</span></span>
+						<a href="/portfolio#ferreteria-el-galpon" class="loop-card">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/Ferreteria.jpg');"></div>
+							<span class="loop-label">Ferretería EL GALPÓN <span class="arrow">→</span></span>
 						</a>
 						<!-- Copia para que el loop sea infinito y sin cortes -->
-						<a href="portfolio.html" class="loop-card" aria-hidden="true" tabindex="-1">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/overdrive.png');"></div>
-							<span class="loop-label">Overdrive <span class="arrow">→</span></span>
-						</a>
-						<a href="portfolio.html" class="loop-card" aria-hidden="true" tabindex="-1">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/portafolio-biblioteca.svg');"></div>
-							<span class="loop-label">Mi Portafolio <span class="arrow">→</span></span>
-						</a>
-						<a href="portfolio.html" class="loop-card" aria-hidden="true" tabindex="-1">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/ArcadeBar.png');"></div>
-							<span class="loop-label">Arcade Bar <span class="arrow">→</span></span>
-						</a>
-						<a href="portfolio.html" class="loop-card" aria-hidden="true" tabindex="-1">
+						<a href="/portfolio#brasa-burger" class="loop-card" aria-hidden="true" tabindex="-1">
 							<div class="loop-img" style="background-image: url('Imagenes portafolio/BrasaBurger.jpg');"></div>
 							<span class="loop-label">Brasa Burger <span class="arrow">→</span></span>
 						</a>
-						<a href="portfolio.html" class="loop-card" aria-hidden="true" tabindex="-1">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/gestorAdmin.png');"></div>
-							<span class="loop-label">Gestión de Personal <span class="arrow">→</span></span>
+						<a href="/portfolio#arcade-bar" class="loop-card" aria-hidden="true" tabindex="-1">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/ArcadeBar.png');"></div>
+							<span class="loop-label">Arcade Bar <span class="arrow">→</span></span>
 						</a>
-						<a href="portfolio.html" class="loop-card" aria-hidden="true" tabindex="-1">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/Origen.png');"></div>
-							<span class="loop-label">ORIGEN Café <span class="arrow">→</span></span>
+						<a href="/portfolio#chill-office" class="loop-card" aria-hidden="true" tabindex="-1">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/ChillOffice.jpg');"></div>
+							<span class="loop-label">Chill Office <span class="arrow">→</span></span>
 						</a>
-						<a href="portfolio.html" class="loop-card" aria-hidden="true" tabindex="-1">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/Ferreteria.png');"></div>
-							<span class="loop-label">Ferretería EL GALPÓN <span class="arrow">→</span></span>
+						<a href="/portfolio#akane" class="loop-card" aria-hidden="true" tabindex="-1">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/Akane.jpg');"></div>
+							<span class="loop-label">AKANE · Sushi Bar <span class="arrow">→</span></span>
 						</a>
-						<a href="portfolio.html" class="loop-card" aria-hidden="true" tabindex="-1">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/GestorBodega.png');"></div>
+						<a href="/portfolio#vetalia" class="loop-card" aria-hidden="true" tabindex="-1">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/Vetalia.jpg');"></div>
+							<span class="loop-label">Vetalia · Veterinaria <span class="arrow">→</span></span>
+						</a>
+						<a href="/portfolio#encanto-eje-cafetero" class="loop-card" aria-hidden="true" tabindex="-1">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/EncantoEjeCafetero.jpg');"></div>
+							<span class="loop-label">Encanto Eje Cafetero <span class="arrow">→</span></span>
+						</a>
+						<a href="/portfolio#copo-y-cuchara" class="loop-card" aria-hidden="true" tabindex="-1">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/CopoYCuchara.jpg');"></div>
+							<span class="loop-label">Copo &amp; Cuchara <span class="arrow">→</span></span>
+						</a>
+						<a href="/portfolio#casa-belmar" class="loop-card" aria-hidden="true" tabindex="-1">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/CasaBelmar.jpg');"></div>
+							<span class="loop-label">Casa Belmar · Joyería <span class="arrow">→</span></span>
+						</a>
+						<a href="/portfolio#escarcha" class="loop-card" aria-hidden="true" tabindex="-1">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/Escarcha.jpg');"></div>
+							<span class="loop-label">Escarcha · Armado de PC <span class="arrow">→</span></span>
+						</a>
+						<a href="/portfolio#overdrive" class="loop-card" aria-hidden="true" tabindex="-1">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/Overdrive.jpg');"></div>
+							<span class="loop-label">Overdrive <span class="arrow">→</span></span>
+						</a>
+						<a href="/portfolio#bodega" class="loop-card" aria-hidden="true" tabindex="-1">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/Bodega.jpg');"></div>
 							<span class="loop-label">Bodega · Gestión <span class="arrow">→</span></span>
 						</a>
-						<a href="portfolio.html" class="loop-card" aria-hidden="true" tabindex="-1">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/hospital.png');"></div>
-							<span class="loop-label">Clínica Quillay <span class="arrow">→</span></span>
+						<a href="/portfolio#plantel" class="loop-card" aria-hidden="true" tabindex="-1">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/Plantel.jpg');"></div>
+							<span class="loop-label">Plantel · Personal <span class="arrow">→</span></span>
 						</a>
-						<a href="portfolio.html" class="loop-card" aria-hidden="true" tabindex="-1">
-							<div class="loop-img" style="background-image: url('Imagenes portafolio/Planetario.png');"></div>
-							<span class="loop-label">Planetario Austral <span class="arrow">→</span></span>
+						<a href="/portfolio#ferreteria-el-galpon" class="loop-card" aria-hidden="true" tabindex="-1">
+							<div class="loop-img" style="background-image: url('Imagenes portafolio/Ferreteria.jpg');"></div>
+							<span class="loop-label">Ferretería EL GALPÓN <span class="arrow">→</span></span>
 						</a>
 					</div>
+				</div>
+			</section>
+
+			<section class="benefits">
+				<div class="container">
+					<div class="benefits-grid">
+						<button type="button" class="benefit-card" data-modal="tecnologias">
+							<div class="benefit-icon metal-gloss">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+							</div>
+							<h3>Tecnologías que Usamos</h3>
+							<p>Trabajamos con herramientas profesionales y actuales, no con plantillas genéricas.</p>
+							<span class="benefit-more">Ver herramientas <span class="arrow">→</span></span>
+						</button>
+						<button type="button" class="benefit-card" data-modal="responsive">
+							<div class="benefit-icon metal-gloss">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"/><path d="M10 19v-3.96 3.15"/><path d="M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></svg>
+							</div>
+							<h3>100% Responsivo</h3>
+							<p>Se ve perfecto en celular, tablet y computador. La mayoría de tus clientes vienen del móvil.</p>
+							<span class="benefit-more">Qué significa <span class="arrow">→</span></span>
+						</button>
+						<button type="button" class="benefit-card highlight" data-modal="seguridad">
+							<span class="benefit-badge">★ Importante</span>
+							<div class="benefit-icon metal-gloss">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+							</div>
+							<h3>Hosting Seguro</h3>
+							<p>Tu sitio publicado en Hostinger: dominio, certificado HTTPS y respaldos incluidos.</p>
+							<span class="benefit-more">Ver seguridad <span class="arrow">→</span></span>
+						</button>
+						<button type="button" class="benefit-card" data-modal="soporte">
+							<div class="benefit-icon metal-gloss">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg>
+							</div>
+							<h3>Soporte Real</h3>
+							<p>Hablas directo con quien construye tu web, por WhatsApp. Sin call centers ni tickets.</p>
+							<span class="benefit-more">Cómo funciona <span class="arrow">→</span></span>
+						</button>
+					</div>
+					<p class="hosting-note">
+						<span class="hosting-dot"></span>
+						Todos nuestros proyectos se publican en <strong>Hostinger</strong>, con dominio propio, certificado SSL y respaldos automáticos.
+					</p>
 				</div>
 			</section>
 
@@ -236,27 +326,27 @@
 				<div class="container">
 					<h2 class="section-title">Nuestros Planes</h2>
 					<div class="plans-badge-wrap">
-						<a href="contacto.html" class="plans-badge">✦ Económico y con resultados excelentes</a>
+						<a href="/contacto" class="plans-badge">✦ Sitios que venden, no solo que se ven bonitos</a>
 					</div>
-					<p class="section-subtitle">Pago único por el desarrollo + una mantención anual que cubre hosting, dominio y soporte.</p>
+					<p class="section-subtitle">Dos formas de pagar el mismo sitio: con la <strong>opción A</strong> pagas el desarrollo una vez y queda a tu nombre; con la <strong>opción B</strong> no pagas desarrollo y lo usas por una mensualidad.</p>
 
 					<div class="plans-grid">
 						<div class="plan-card basic">
 							<div class="plan-header">
 								<div class="plan-icon">
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-										<rect x="3" y="3" width="18" height="18" rx="2"/>
-										<line x1="3" y1="9" x2="21" y2="9"/>
-										<line x1="9" y1="21" x2="9" y2="9"/>
-									</svg>
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
 								</div>
 								<h3 class="plan-name">Plan Básico</h3>
-								<div class="plan-price">
-									<span class="currency">$</span>
-									<span class="amount">150.000</span>
-									<span class="period">pago único</span>
+							</div>
+							<div class="plan-precios">
+								<div class="plan-desarrollo">
+									<p class="plan-precio-etiqueta">Opción A · Pago único</p>
+									<div class="plan-price">
+										<span class="currency">$</span>
+										<span class="amount" data-precio="planes.basico.desarrollo" data-sin-signo>280.000</span>
+										<span class="period">una vez</span>
+									</div>
 								</div>
-								<p class="plan-price-note">+ $60.000/año hosting y mantención</p>
 							</div>
 							<div class="plan-features">
 								<ul class="features-list">
@@ -266,11 +356,9 @@
 								<div class="features-extra">
 									<ul class="features-list">
 										<li class="feature"><span class="check">✓</span>100% responsivo (celular, tablet y PC)</li>
-										<li class="feature"><span class="check">✓</span>Hosting seguro y dominio gestionados por nosotros</li>
 										<li class="feature"><span class="check">✓</span>Botón de WhatsApp y redes sociales</li>
 										<li class="feature"><span class="check">✓</span>Formulario de contacto y SEO básico</li>
 										<li class="feature"><span class="cross">✘</span>Sin carrito ni base de datos</li>
-										<li class="feature"><span class="cross">✘</span>Cambios posteriores se cotizan aparte (desde $15.000 c/u)</li>
 									</ul>
 								</div>
 								<button type="button" class="features-toggle">
@@ -278,26 +366,26 @@
 									<span class="toggle-arrow">▾</span>
 								</button>
 							</div>
-							<a href="contacto.html" class="plan-button">Elegir Plan</a>
+							<a href="/contacto" class="plan-button">Elegir Plan</a>
 						</div>
 
 						<div class="plan-card premium featured">
 							<div class="featured-badge">Más Popular</div>
 							<div class="plan-header">
 								<div class="plan-icon">
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-										<circle cx="9" cy="21" r="1"/>
-										<circle cx="20" cy="21" r="1"/>
-										<path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-									</svg>
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></svg>
 								</div>
 								<h3 class="plan-name">Plan Premium</h3>
-								<div class="plan-price">
-									<span class="currency">$</span>
-									<span class="amount">280.000</span>
-									<span class="period">pago único</span>
+							</div>
+							<div class="plan-precios">
+								<div class="plan-desarrollo">
+									<p class="plan-precio-etiqueta">Opción A · Pago único</p>
+									<div class="plan-price">
+										<span class="currency">$</span>
+										<span class="amount" data-precio="planes.premium.desarrollo" data-sin-signo>450.000</span>
+										<span class="period">una vez</span>
+									</div>
 								</div>
-								<p class="plan-price-note">+ $90.000/año hosting, mantención y soporte</p>
 							</div>
 							<div class="plan-features">
 								<ul class="features-list">
@@ -310,8 +398,7 @@
 										<li class="feature"><span class="check">✓</span>Interacciones fluidas y diseño 100% personalizado</li>
 										<li class="feature"><span class="check">✓</span>Hasta 8 secciones o menú digital completo</li>
 										<li class="feature"><span class="check">✓</span>Creación de logo de empresa</li>
-										<li class="feature"><span class="check">✓</span>2 modificaciones incluidas al mes</li>
-										<li class="feature"><span class="check">✓</span>Soporte prioritario por WhatsApp</li>
+										<li class="feature"><span class="check">✓</span>Soporte prioritario por WhatsApp (24 h hábiles)</li>
 									</ul>
 								</div>
 								<button type="button" class="features-toggle">
@@ -319,26 +406,27 @@
 									<span class="toggle-arrow">▾</span>
 								</button>
 							</div>
-							<a href="contacto.html" class="plan-button">Elegir Plan</a>
+							<a href="/contacto" class="plan-button">Elegir Plan</a>
 						</div>
 
 						<div class="plan-card custom">
 							<div class="plan-header">
 								<div class="plan-icon">
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-										<ellipse cx="12" cy="5" rx="9" ry="3"/>
-										<path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
-										<path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
-									</svg>
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
 								</div>
 								<h3 class="plan-name">Sistema a Medida</h3>
 								<p class="plan-tag">Para grandes cargas de datos</p>
-								<div class="plan-price">
-									<span class="period">desde</span>
-									<span class="currency">$</span>
-									<span class="amount">400.000</span>
+							</div>
+							<div class="plan-precios">
+								<div class="plan-desarrollo">
+									<p class="plan-precio-etiqueta">Opción A · Pago único</p>
+									<div class="plan-price">
+										<span class="period">desde</span>
+										<span class="currency">$</span>
+										<span class="amount" data-precio="planes.medida.desarrollo" data-sin-signo>900.000</span>
+									</div>
+									<p class="plan-price-note">Cotización personalizada</p>
 								</div>
-								<p class="plan-price-note">El plan más completo, con cotización personalizada</p>
 							</div>
 							<div class="plan-features">
 								<ul class="features-list">
@@ -360,67 +448,84 @@
 									<span class="toggle-arrow">▾</span>
 								</button>
 							</div>
-							<a href="contacto.html" class="plan-button">Solicitar Cotización</a>
+							<a href="/contacto" class="plan-button">Solicitar Cotización</a>
 						</div>
 					</div>
 
-					<p class="plans-note">Precios en pesos chilenos (CLP). Se inicia con el 50% y el saldo se paga contra entrega.<br>Las soluciones con IA consideran un costo mensual adicional según el uso.</p>
-
-					<div class="quote-builder">
-						<h3 class="quote-title">Arma tu proyecto en 3 pasos</h3>
-						<p class="quote-subtitle">Elige lo que necesitas y mira el precio estimado al instante.</p>
-
-						<div class="quote-steps">
-							<span class="quote-step-dot active"><b>1</b> Base</span>
-							<span class="quote-step-dot"><b>2</b> Funciones</span>
-							<span class="quote-step-dot"><b>3</b> Extras</span>
-						</div>
-
-						<div class="quote-step active" data-step="1">
-							<p class="quote-step-label">¿Qué tipo de página necesitas? (elige una)</p>
-							<div class="quote-options">
-								<label class="option-card"><input type="radio" name="q-base" value="Página de presentación" data-price="150000" checked><span><strong>Página de presentación</strong><em>$150.000</em></span></label>
-								<label class="option-card"><input type="radio" name="q-base" value="Menú digital" data-price="200000"><span><strong>Menú digital</strong><em>$200.000</em></span></label>
-								<label class="option-card"><input type="radio" name="q-base" value="Tienda con carrito" data-price="280000"><span><strong>Tienda con carrito</strong><em>$280.000</em></span></label>
-								<label class="option-card"><input type="radio" name="q-base" value="Reservas o turnos" data-price="320000"><span><strong>Reservas o turnos</strong><em>$320.000</em></span></label>
-								<label class="option-card"><input type="radio" name="q-base" value="Sistema de gestión (altas cargas de datos)" data-price="400000"><span><strong>Sistema de gestión</strong><em>$400.000</em></span></label>
+					<div class="mensual" id="opcion-b">
+						<div class="opcion-b">
+							<p class="opcion-b__marca">Opción B · Mensualidad</p>
+							<h3 class="opcion-b__titulo">Tu sitio sin pago inicial, pagando mes a mes</h3>
+							<p class="opcion-b__bajada">En vez de pagar el desarrollo, eliges una mensualidad: construimos tu sitio, lo publicamos y lo mantenemos mientras la mensualidad esté activa, con permanencia mínima de 12 meses.</p>
+							<div class="opcion-b__planes">
+								<div class="opcion-b-plan">
+									<p class="opcion-b-plan__nombre">Plan Básico</p>
+									<p class="opcion-b-plan__precio"><span data-precio="planes.basico.mensual">$25.000</span><span class="opcion-b-plan__periodo">/mes</span></p>
+									<p class="opcion-b-plan__detalle">1 cambio incluido al mes</p>
+								</div>
+								<div class="opcion-b-plan opcion-b-plan--destacado">
+									<p class="opcion-b-plan__nombre">Plan Premium</p>
+									<p class="opcion-b-plan__precio"><span data-precio="planes.premium.mensual">$45.000</span><span class="opcion-b-plan__periodo">/mes</span></p>
+									<p class="opcion-b-plan__detalle">4 cambios al mes, reporte de visitas y ficha de Google al día</p>
+								</div>
+								<div class="opcion-b-plan">
+									<p class="opcion-b-plan__nombre">Sistema a Medida</p>
+									<p class="opcion-b-plan__precio"><span class="opcion-b-plan__desde">desde</span><span data-precio="planes.medida.mensual">$90.000</span><span class="opcion-b-plan__periodo">/mes</span></p>
+									<p class="opcion-b-plan__detalle">Cambios ilimitados razonables</p>
+								</div>
 							</div>
+							<p class="opcion-b__incluye">Todas incluyen hosting, dominio, certificado SSL, respaldos semanales y monitoreo de caídas.</p>
 						</div>
-
-						<div class="quote-step" data-step="2">
-							<p class="quote-step-label">Agrega funciones (las que quieras)</p>
-							<div class="quote-options">
-								<label class="option-card"><input type="checkbox" value="Base de datos" data-price="60000"><span><strong>Base de datos</strong><em>+$60.000</em></span></label>
-								<label class="option-card"><input type="checkbox" value="Panel de administración" data-price="50000"><span><strong>Panel de administración</strong><em>+$50.000</em></span></label>
-								<label class="option-card"><input type="checkbox" value="Cuentas de usuario" data-price="40000"><span><strong>Cuentas de usuario</strong><em>+$40.000</em></span></label>
-								<label class="option-card"><input type="checkbox" value="Chatbot con IA" data-price="70000"><span><strong>Chatbot con IA</strong><em>+$70.000</em></span></label>
-								<label class="option-card"><input type="checkbox" value="Cargas y reportes Excel" data-price="40000"><span><strong>Cargas y reportes Excel</strong><em>+$40.000</em></span></label>
-							</div>
+						<h3 class="mensual__titulo">¿Por qué una mensualidad?</h3>
+						<div class="mensual-grid">
+							<article class="mensual-card">
+								<span class="mensual-card__icono" aria-hidden="true">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+								</span>
+								<h4 class="mensual-card__problema">Tu sitio se cae y nadie se entera</h4>
+								<p class="mensual-card__solucion">Monitoreamos que esté arriba las 24 horas.</p>
+							</article>
+							<article class="mensual-card">
+								<span class="mensual-card__icono" aria-hidden="true">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+								</span>
+								<h4 class="mensual-card__problema">Precios viejos que espantan clientes</h4>
+								<p class="mensual-card__solucion">Actualizamos tu información cuando la necesites.</p>
+							</article>
+							<article class="mensual-card">
+								<span class="mensual-card__icono" aria-hidden="true">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+								</span>
+								<h4 class="mensual-card__problema">Un error y no hay vuelta atrás</h4>
+								<p class="mensual-card__solucion">Respaldos semanales para restaurar en minutos.</p>
+							</article>
+							<article class="mensual-card">
+								<span class="mensual-card__icono" aria-hidden="true">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 11 2 2 4-4"/><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+								</span>
+								<h4 class="mensual-card__problema">Invisible en Google</h4>
+								<p class="mensual-card__solucion">Mantenemos tu sitio indexado y tu ficha al día.</p>
+							</article>
 						</div>
-
-						<div class="quote-step" data-step="3">
-							<p class="quote-step-label">Extras y estilo (los que quieras)</p>
-							<div class="quote-options">
-								<label class="option-card"><input type="checkbox" value="Logo y marca" data-price="30000"><span><strong>Logo y marca</strong><em>+$30.000</em></span></label>
-								<label class="option-card"><input type="checkbox" value="Animaciones personalizadas" data-price="25000"><span><strong>Animaciones personalizadas</strong><em>+$25.000</em></span></label>
-								<label class="option-card"><input type="checkbox" value="SEO avanzado" data-price="25000"><span><strong>SEO avanzado</strong><em>+$25.000</em></span></label>
-								<label class="option-card"><input type="checkbox" value="Redacción de contenidos" data-price="20000"><span><strong>Redacción de contenidos</strong><em>+$20.000</em></span></label>
-								<label class="option-card"><input type="checkbox" value="Mantención anual (hosting y dominio)" data-price="60000" data-yearly="1"><span><strong>Mantención anual</strong><em>+$60.000/año</em></span></label>
-							</div>
-						</div>
-
-						<div class="quote-total">
-							<span>Precio estimado:</span>
-							<strong id="quote-total-amount">$150.000</strong><span class="per-year"></span>
-						</div>
-						<p class="quote-note">Valor referencial en CLP. Lo confirmamos contigo sin compromiso. La IA considera un costo mensual según uso.</p>
-
-						<div class="quote-nav">
-							<button type="button" id="quote-prev" class="btn btn-secondary" disabled>← Atrás</button>
-							<button type="button" id="quote-next" class="btn btn-primary">Siguiente →</button>
-							<a id="quote-send" class="btn btn-primary" href="https://wa.me/56940443203" target="_blank" rel="noopener noreferrer" hidden>Enviar por WhatsApp</a>
+						<p class="mensual-remate"><strong data-precio="planes.basico.mensual">$25.000</strong> al mes es menos que dos deliverys. Por eso tu negocio está online 24/7.</p>
+						<div class="opcion-b__cta">
+							<a href="/contacto" class="btn btn-primary">Quiero la opción B</a>
 						</div>
 					</div>
+
+					<div class="pago-flexible">
+						<span class="pago-flexible__icono" aria-hidden="true">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+						</span>
+						<div class="pago-flexible__texto">
+							<h3 class="pago-flexible__titulo">Opción A en cuotas</h3>
+							<p>¿Quieres que el sitio quede a tu nombre pero no tienes el monto completo? Pagas el desarrollo en cuotas mensuales hasta completar el valor. Conversamos el plan que te acomode.</p>
+						</div>
+						<a href="/contacto" class="pago-flexible__cta">Conversemos tu plan de pago <span class="arrow" aria-hidden="true">→</span></a>
+					</div>
+
+					<p class="plans-note">Precios en pesos chilenos (CLP). <strong>Opción A:</strong> el desarrollo se inicia con el 50% y el saldo se paga contra entrega, o en cuotas si lo necesitas; el sitio queda a tu nombre y el alojamiento, el dominio y los cambios posteriores se cotizan según lo que necesites. <strong>Opción B:</strong> sin pago inicial; la mensualidad se cobra desde la publicación del sitio, con permanencia mínima de 12 meses, y puede pagarse anualmente (12 meses al precio de 10). Las soluciones con IA consideran un costo adicional según el uso.</p>
+
 				</div>
 			</section>
 
@@ -430,7 +535,7 @@
 			<div class="container">
 				<div class="footer-content">
 					<div class="footer-section">
-						<a href="index.html" class="footer-logo">
+						<a href="/" class="footer-logo">
 							<span class="logo-text">KAMEX</span>
 							<span class="logo-accent">Tech</span>
 						</a>
@@ -441,17 +546,17 @@
 					<div class="footer-section">
 						<span class="footer-title">Enlaces</span>
 						<ul class="footer-links">
-							<li><a href="index.html#inicio">Inicio</a></li>
-							<li><a href="index.html#servicios">Servicios</a></li>
-							<li><a href="portfolio.html">Portafolio</a></li>
-							<li><a href="contacto.html">Contacto</a></li>
+							<li><a href="/#inicio">Inicio</a></li>
+							<li><a href="/#servicios">Servicios</a></li>
+							<li><a href="/portfolio">Portafolio</a></li>
+							<li><a href="/contacto">Contacto</a></li>
 						</ul>
 					</div>
 					<div class="footer-section">
 						<span class="footer-title">Contacto</span>
 						<ul class="footer-links">
-							<li>cristobal.chacon2003@gmail.com</li>
-							<li>+56 9 4044 3203</li>
+							<li>contacto.kamextech@gmail.com</li>
+							<li>+56 9 4636 1974</li>
 							<li>Santiago, Chile</li>
 						</ul>
 					</div>
@@ -462,10 +567,22 @@
 			</div>
 		</footer>
 
-		<a href="https://wa.me/56940443203?text=Hola%20KAMEX%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+		<!-- Ventana emergente de información (se llena desde script.js) -->
+		<div class="info-modal" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-modal-title" hidden>
+			<div class="info-modal-box">
+				<button type="button" class="info-modal-close" aria-label="Cerrar">&times;</button>
+				<div class="info-modal-icon metal-gloss" id="info-modal-icon"></div>
+				<h3 id="info-modal-title"></h3>
+				<div class="info-modal-body" id="info-modal-body"></div>
+			</div>
+		</div>
+
+		<a href="https://wa.me/56946361974?text=Hola%20KAMEX%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
 			<svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-1.2 0-2.4-.3-3.5-.8l-.6-.3-4.9.9 1-4.7-.3-.6C6.6 18 6 16.5 6 15 6 9.5 10.5 5 16 5s10 4.5 10 10-4.5 10-10 10zm5.5-7.5c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2s-.8 1-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
 		</a>
 
-		<script src="script.js?v=10"></script>
+		<script src="fondo-lineas.js?v=2"></script>
+		<script src="precios.js?v=2"></script>
+		<script src="script.js?v=17"></script>
 	</body>
 </html>
