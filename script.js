@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     if (!reducedMotion) {
-        document.querySelectorAll('.plan-card, .portfolio-item, .benefit-card, .section-title, .contact-form-wrapper, .contact-info-item, .portfolio-item-full, .showcase-card, .process-step, .faq-item').forEach(el => {
+        document.querySelectorAll('.plan-card, .portfolio-item, .benefit-card, .contact-form-wrapper, .contact-info-item, .portfolio-item-full, .showcase-card, .process-step, .faq-item').forEach(el => {
           el.style.opacity = '0';
           el.style.transform = 'translateY(30px)';
           el.style.transition = 'opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)';
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ===== Fondo decorativo: código desplazándose de izquierda a derecha =====
+    // ===== Fondo decorativo: líneas de código quietas (sin animación, por rendimiento) =====
     // Cada línea es una lista de pares [claseDeColor, texto]. Se construye con
     // createElement/textContent, así el navegador nunca interpreta esto como HTML.
     const CODE_LINES = [
@@ -152,9 +152,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const row = document.createElement('div');
             row.className = 'code-row';
             row.style.top = (5 + i * 10.2) + '%';
-            row.style.animationDuration = (36 + Math.random() * 26).toFixed(1) + 's';
-            // Delay negativo: cada línea arranca ya avanzada, sin esperas iniciales
-            row.style.animationDelay = '-' + (Math.random() * 40).toFixed(1) + 's';
+            // Cada línea parte en un punto distinto para que no queden todas alineadas
+            row.style.left = ((i * 37) % 55 - 10) + '%';
 
             tokens.forEach(([cls, text]) => {
                 const span = document.createElement('span');
@@ -336,6 +335,75 @@ document.addEventListener('DOMContentLoaded', function() {
         // animaciones CSS: ya no sigue al cursor.
     }
 
+
+    // ===== Cinta de proyectos del inicio =====
+    // Se puede deslizar con el dedo de izquierda a derecha. Sola avanza despacio;
+    // se detiene mientras la tocan (o el mouse está encima) y retoma 2,5 s después.
+    // La pista trae los proyectos dos veces: al llegar a la mitad se salta al
+    // inicio (y viceversa) sin que se note, así nunca se acaba.
+    const loop = document.querySelector('.loop-viewport');
+    const loopTrack = loop && loop.querySelector('.loop-track');
+    if (loop && loopTrack) {
+        loop.classList.add('loop-js');
+        const VELOCIDAD = 40;   // px por segundo (antes ~130 en celular)
+        const ESPERA = 2500;    // ms sin tocar antes de seguir sola
+        let pos = 0;            // posición propia (con decimales) para un avance suave
+        let tocando = false;
+        let encima = false;
+        let enPantalla = true;
+        let retomar = 0;
+        let ultimo = 0;
+        let rafId = 0;
+        const mitad = () => loopTrack.scrollWidth / 2;
+        const envolver = () => {
+            const m = mitad();
+            if (m <= 0) return;
+            if (loop.scrollLeft >= m) loop.scrollLeft -= m;
+            else if (loop.scrollLeft <= 0) loop.scrollLeft += m;
+        };
+
+        const avanzar = (t) => {
+            rafId = 0;
+            const dt = ultimo ? Math.min(t - ultimo, 100) : 0;
+            ultimo = t;
+            if (!reducedMotion && !tocando && !encima && t > retomar) {
+                pos += VELOCIDAD * dt / 1000;
+                if (pos >= mitad()) pos -= mitad();
+                loop.scrollLeft = pos;
+            }
+            if (enPantalla && !document.hidden) rafId = requestAnimationFrame(avanzar);
+        };
+        const arrancar = () => { if (!rafId) { ultimo = 0; rafId = requestAnimationFrame(avanzar); } };
+
+        // Si la persona la movió, la cinta sigue desde donde la dejó
+        loop.addEventListener('scroll', () => {
+            if (Math.abs(loop.scrollLeft - pos) > 2) {
+                envolver();
+                pos = loop.scrollLeft;
+                retomar = performance.now() + ESPERA;
+            }
+        }, { passive: true });
+        loop.addEventListener('touchstart', () => { tocando = true; }, { passive: true });
+        const soltar = () => { tocando = false; retomar = performance.now() + ESPERA; };
+        loop.addEventListener('touchend', soltar, { passive: true });
+        loop.addEventListener('touchcancel', soltar, { passive: true });
+        // Solo el mouse real pausa por estar encima (en el celular el toque simula un mouse que nunca "sale")
+        loop.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') encima = true; });
+        loop.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') encima = false; });
+
+        // Solo se anima cuando se ve (ahorra batería)
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver((e) => {
+                const antes = enPantalla;
+                enPantalla = e[0].isIntersecting;
+                if (enPantalla && !antes) arrancar();
+            }).observe(loop);
+        }
+        document.addEventListener('visibilitychange', () => { if (!document.hidden && enPantalla) arrancar(); });
+        // Arranca un poco adentro para poder deslizar también hacia atrás
+        loop.scrollLeft = pos = 1;
+        arrancar();
+    }
 
     // Formulario de contacto: se envía a FormSubmit sin salir de la página y
     // avisa con una ventana. Si JavaScript falla, el formulario se envía igual

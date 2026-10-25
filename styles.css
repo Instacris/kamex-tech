@@ -64,30 +64,13 @@
 }
 
 
-/* El dorado se mantiene fijo en todo el sitio (ya no alterna con plata).
-   El brillo metálico lo sigue aportando metalSweep más abajo. */
+/* El dorado se mantiene fijo en todo el sitio (ya no alterna con plata). */
 
 /* ===== Brillo / reflejo metálico ===== */
-/* Barrido de luz que recorre textos dorados o plateados */
-@keyframes metalSweep {
-  0%   { background-position: 200% center; }
-  100% { background-position: -200% center; }
-}
 
+/* Textos destacados: color fijo, sin reflejo animado (rinde mejor en celulares) */
 .metal-shine {
-  background-image: linear-gradient(
-    100deg,
-    var(--primary-color) 20%,
-    var(--shine-soft) 38%,
-    var(--shine) 46%,
-    var(--primary-color) 62%
-  );
-  background-size: 250% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  animation: metalSweep 4.5s linear infinite;
+  color: var(--primary-color);
 }
 
 /* Reflejo que cruza los íconos y bloques con fondo metálico */
@@ -250,13 +233,7 @@ a:hover {
   font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
   font-size: 0.78rem;
   opacity: 0.16;
-  will-change: transform;
-  animation: codeDrift linear infinite;
-}
-
-@keyframes codeDrift {
-  from { transform: translateX(-100%); }
-  to   { transform: translateX(100vw); }
+  /* Quieto: antes se desplazaba sin parar y gastaba rendimiento en celulares */
 }
 
 /* Colores tipo editor (Visual Studio Code) */
@@ -503,66 +480,19 @@ a:hover {
   letter-spacing: -0.5px;
   margin-bottom: 1.5rem;
   color: var(--heading-color);
-  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .gradient-text {
   color: var(--accent-color);
-  /* Reflejo metálico recorriendo la palabra destacada del título */
-  background-image: linear-gradient(
-    100deg,
-    var(--primary-color) 22%,
-    var(--shine-soft) 40%,
-    var(--shine) 47%,
-    var(--primary-color) 64%
-  );
-  background-size: 250% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: metalSweep 4.5s linear infinite;
 }
 
-/* El acento del logo comparte el mismo reflejo, manteniendo su dorado fijo */
-.logo-accent {
-  background-image: linear-gradient(
-    100deg,
-    var(--accent-color) 25%,
-    var(--shine-soft) 42%,
-    var(--shine) 48%,
-    var(--accent-color) 66%
-  );
-  background-size: 250% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: metalSweep 5s linear infinite;
-}
-
-/* Los números y precios metálicos también reflejan */
+/* Precios: color fijo, sin reflejo animado */
 .amount,
 .quote-total strong {
-  background-image: linear-gradient(
-    100deg,
-    var(--heading-color) 25%,
-    var(--primary-color) 45%,
-    var(--heading-color) 65%
-  );
-  background-size: 250% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: metalSweep 6s linear infinite;
+  color: var(--heading-color);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .gradient-text,
-  .logo-accent,
-  .amount,
-  .quote-total strong,
-  .metal-shine {
-    animation: none;
-  }
   .metal-gloss::after { display: none; }
 }
 
@@ -571,7 +501,6 @@ a:hover {
   color: var(--text-muted-color);
   margin-bottom: 2.5rem;
   line-height: 1.6;
-  animation: fadeUp 0.8s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .hero-buttons {
@@ -717,12 +646,6 @@ a:hover {
   content: '▍';
   margin-left: 6px;
   color: var(--primary-color);
-  animation: blink 1.1s steps(1) infinite;
-}
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
 }
 
 /* General Section Styling */
@@ -1891,8 +1814,7 @@ body.modal-open {
   line-height: 1;
 }
 .quote-total__item strong.cambio {
-  /* Se suma al barrido metálico de los precios, sin apagarlo */
-  animation: montoCambia 0.4s cubic-bezier(0.22, 1, 0.36, 1), metalSweep 6s linear infinite;
+  animation: montoCambia 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 @keyframes montoCambia {
   from { opacity: 0.35; transform: translateY(5px); }
@@ -2090,6 +2012,22 @@ body.modal-open {
 }
 .loop-viewport:hover .loop-track {
   animation-play-state: paused;
+}
+/* Con JavaScript la cinta se puede deslizar con el dedo (o el trackpad) y
+   avanza sola despacio; script.js mueve el scroll en vez de la animación CSS. */
+.loop-viewport.loop-js {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-top: 8px;
+  margin-top: 0;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.loop-viewport.loop-js::-webkit-scrollbar {
+  display: none;
+}
+.loop-viewport.loop-js .loop-track {
+  animation: none;
 }
 .loop-card {
   display: block;
@@ -2923,13 +2861,9 @@ pre.card-content {
    del inicio, el plan más popular, lo "Importante" y la opción B.
    Si se usa en más lugares pierde fuerza.
    ============================================================ */
-.logo-accent {
-  color: var(--gold);
-  background-image: linear-gradient(100deg, var(--gold) 25%, var(--gold-soft) 42%, #ffffff 48%, var(--gold) 66%);
-}
+.logo-accent,
 .gradient-text {
   color: var(--gold);
-  background-image: linear-gradient(100deg, var(--gold) 22%, var(--gold-soft) 40%, #ffffff 47%, var(--gold) 64%);
 }
 
 .plans-badge {
