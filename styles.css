@@ -2216,6 +2216,17 @@ body.modal-open {
 .showcase-card:hover .showcase-btn .arrow {
   transform: translateX(6px);
 }
+/* Toda la tarjeta abre el proyecto: el enlace de la barra se extiende sobre la
+   imagen. Antes, en el celular, tocar la captura (lo más grande) no hacía nada. */
+.showcase-card {
+  position: relative;
+}
+.showcase-btn:not(.disabled)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
 .showcase-btn.disabled {
   background: rgba(var(--tint-rgb), 0.07);
   color: var(--text-muted-color);
